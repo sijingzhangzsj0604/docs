@@ -8,7 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'API7 Docs',
   tagline: '',
-  url: 'https://docs.api7.ai',
+  // url: 'https://docs.api7.ai',
+  url: 'https://api7-docs.onrender.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
