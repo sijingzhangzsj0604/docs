@@ -1,5 +1,0 @@
----
-title: Demo
----
-
-Demo content.
