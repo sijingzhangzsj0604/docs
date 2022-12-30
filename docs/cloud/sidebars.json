@@ -1,0 +1,168 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "Overview",
+      "items": [
+        "overview/api7-cloud",
+        "overview/how-apisix-connects-to-api7-cloud"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "link": {
+        "type": "doc",
+        "id": "getting-started/README"
+      },
+      "items": [
+        "getting-started/setup-account-login",
+        "getting-started/add-data-plane-instance",
+        "getting-started/create-httpbin-app",
+        "getting-started/create-httpbin-api",
+        "getting-started/send-requests-to-verify",
+        "getting-started/attach-rate-limiting-plugin",
+        "getting-started/summary"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Guides",
+      "items": [
+        {
+          "type": "category",
+          "label": "Security",
+          "items": [
+            "guides/security/https-only-application",
+            "guides/security/enable-cors",
+            "guides/security/enable-mutual-tls",
+            "guides/security/restrict-api-client-ip-addresses",
+            "guides/security/enable-upstream-mutual-tls",
+            "guides/security/enable-acl",
+            "guides/security/enable-csrf-prevention"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Product",
+          "items": [
+            "guides/product/personal-access-token",
+            "guides/product/how-to-deploy-apache-apisix",
+            "guides/product/how-to-monitor-your-data-plane-instances",
+            "guides/product/add-request-id-for-api-requests",
+            "guides/product/control-plane-settings"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Traffic Management",
+          "items": [
+            "guides/traffic-management/rate-limiting",
+            "guides/traffic-management/canary-release",
+            "guides/traffic-management/fault-injection",
+            "guides/traffic-management/websocket-api",
+            "guides/traffic-management/transform-request",
+            "guides/traffic-management/transform-response",
+            "guides/traffic-management/redirect",
+            {
+              "type": "category",
+              "label": "Authentication",
+              "items": [
+                "guides/traffic-management/authentication/key-auth",
+                "guides/traffic-management/authentication/hmac-auth",
+                "guides/traffic-management/authentication/basic-auth",
+                "guides/traffic-management/authentication/jwt-auth",
+                "guides/traffic-management/authentication/openid-connect"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Service Discovery",
+              "items": [
+                "guides/traffic-management/service-discovery/kubernetes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Observability",
+          "items": [
+            "guides/observability/log-collection-with-http-logger",
+            "guides/observability/log-collection-with-kafka-logger",
+            "guides/observability/log-collection-log-format"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Concepts",
+      "items": [
+        "concepts/control-plane",
+        "concepts/application",
+        "concepts/api",
+        "concepts/consumer",
+        "concepts/certificate",
+        "concepts/plugin"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "References",
+      "items": [
+        "references/release-notes",
+        "references/variables",
+        {
+          "type": "category",
+          "label": "Plugins",
+          "items": [
+            {
+              "type": "category",
+              "label": "Security",
+              "items": [
+                "references/plugins/security/acl",
+                "references/plugins/security/cors",
+                "references/plugins/security/csrf",
+                "references/plugins/security/ip-restriction"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Traffic Management",
+              "items": [
+                "references/plugins/traffic-management/rate-limiting",
+                "references/plugins/traffic-management/authentication",
+                "references/plugins/traffic-management/fault-injection",
+                "references/plugins/traffic-management/redirect",
+                "references/plugins/traffic-management/request-rewrite",
+                "references/plugins/traffic-management/response-rewrite"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Observability",
+              "items": [
+                "references/plugins/observability/logging"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Product",
+              "items": [
+                "references/plugins/product/request-id"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Product",
+          "items": [
+            "references/product/upstream-health-check"
+          ]
+        }
+      ]
+    }
+  ]
+}

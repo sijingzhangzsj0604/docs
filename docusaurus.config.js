@@ -38,7 +38,25 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: "daily",
+          priority: 0.5,
+        },
       }),
+    ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            spec: "https://api7-cloud-swagger.s3.amazonaws.com/swagger/cloud-console.json",
+            route: "/cloud/api",
+          },
+        ],
+        theme: {
+          primaryColor: "#e8433e",
+        }
+      },
     ],
   ],
 
@@ -49,7 +67,7 @@ const config = {
         id: 'cloud',
         path: 'docs/cloud',
         routeBasePath: '/cloud',
-        sidebarPath: require.resolve('./docs/cloud/sidebars.js')
+        sidebarPath: require.resolve('./docs/cloud/sidebars.json')
       }
     ],
     [
@@ -59,6 +77,23 @@ const config = {
         path: 'docs/enterprise',
         routeBasePath: '/enterprise',
         sidebarPath: require.resolve('./docs/enterprise/sidebars.js')
+      }
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: "/cloud",
+            to: "/cloud/overview/api7-cloud",
+          }, {
+            from: "/enterprise",
+            to: "/enterprise/introduction",
+          }, {
+            from: "/",
+            to: "/cloud/overview/api7-cloud",
+          }
+        ]
       }
     ]
   ],
@@ -73,6 +108,27 @@ const config = {
           src: 'https://static.apiseven.com/2022/10/02/63398bceeeac7.webp',
         },
         items: [
+          {
+            type: 'dropdown',
+            label: 'Products',
+            position: 'left',
+            items: [
+              {
+                label: 'Cloud',
+                href: '/cloud/overview/api7-cloud',
+              },
+              {
+                label: 'Enterprise',
+                href: '/enterprise/introduction',
+              },
+            ],
+          },
+          {
+            position: "left",
+            label: "API Reference",
+            to: "/cloud/api",
+            className: "navbar-cloud-api-reference"
+          },
           {
             href: 'https://github.com/api7/docs',
             label: 'GitHub',
@@ -89,7 +145,15 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+      },
     }),
+
+  clientModules: [
+    require.resolve('./scripts/listenProductsChange.ts')
+  ]
 };
 
 module.exports = config;
