@@ -89,9 +89,6 @@ const config = {
           }, {
             from: "/enterprise",
             to: "/enterprise/introduction",
-          }, {
-            from: "/",
-            to: "/cloud/overview/api7-cloud",
           }
         ]
       }
