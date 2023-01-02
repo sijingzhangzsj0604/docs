@@ -135,6 +135,7 @@ const config = {
           },
         ],
       },
+      metadata: [{ name: 'keywords', content: 'api7, apache apisix, premium support, enterprise, documentation, docs' }],
       footer: {
         style: 'dark',
         links: [],
