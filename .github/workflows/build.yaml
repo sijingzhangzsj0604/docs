@@ -1,8 +1,5 @@
 name: Build docker images and push them to ACR
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
