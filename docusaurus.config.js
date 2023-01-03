@@ -75,6 +75,15 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'enterprise-whitepaper',
+        path: 'docs/enterprise-whitepaper',
+        routeBasePath: '/enterprise-whitepaper',
+        sidebarPath: require.resolve('./docs/enterprise-whitepaper/sidebars.json')
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'enterprise',
         path: 'docs/enterprise',
         routeBasePath: '/enterprise',
@@ -119,7 +128,7 @@ const config = {
               {
                 label: 'Enterprise',
                 href: '/enterprise/introduction',
-              },
+              }
             ],
           },
           {
@@ -127,6 +136,12 @@ const config = {
             label: "API Reference",
             to: "/cloud/api",
             className: "navbar-cloud-api-reference"
+          },
+          {
+            position: "left",
+            label: "Whitepaper",
+            to: "/enterprise-whitepaper/introduction",
+            className: "navbar-enterprise-whitepaper"
           },
           {
             href: 'https://github.com/api7/docs',
