@@ -1,0 +1,44 @@
+name: Build docker images and push them to ACR
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set image tag
+        run: |
+          echo "IMAGE_TAG=`git rev-parse --short HEAD`-`TZ=Asia/Shanghai date '+%m%d%H%M'`" >> $GITHUB_ENV
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - uses: Azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_NAME }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Build APISEVEN API7 Docs Images
+        run: |
+          docker build -t api7/api7-docs:dev .
+
+      - name: Push API7 Docs Images
+        env:
+          REGISTRY: ${{ secrets.REGISTRY_NAME }}
+          IMAGE_TAG: ${{ env.IMAGE_TAG }}
+        run: |
+          docker tag api7/api7-docs:dev $REGISTRY/api7-docs:$IMAGE_TAG
+          docker push $REGISTRY/api7-docs:$IMAGE_TAG
