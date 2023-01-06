@@ -41,7 +41,7 @@ const config = {
           changefreq: "daily",
           priority: 0.5,
         },
-        googleAnalytics: {
+        gtag: {
           trackingID: 'G-EHTFFP3QP4',
         },
       }),
