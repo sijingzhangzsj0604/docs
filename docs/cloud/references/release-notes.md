@@ -4,6 +4,26 @@ reading_time: auto
 show_feedback: true
 ---
 
+# 2023.01.05
+
+We made some plugin refactors in this release so that plugins are consistent
+with ones in Apache APISIX.
+
+### API7 Cloud
+
+* Now resource search is case-insensitive
+* Now the gateway listening ports are shown in the console
+* Now the canary release rule expression is same to the API fine-grained route control
+* Rename Rate Limiting plugin to Limit Count plugin
+* Rename Request Rewrite plugin to Proxy Rewrite plugin
+* Refactor the plugin implementation (be consistent with Apache APISIX)
+* Ask users to accept privacy and term of use before sign up
+* Now the resource list column width is self-adaption
+ 
+### [Cloud Lua Module](https://github.com/api7/cloud-scripts/tree/main/assets)
+
+* Support uploading listening ports to API7 Cloud
+
 ## 2022.12.14
 
 We completed the user/organization data lifecycle in this release. Now you can
