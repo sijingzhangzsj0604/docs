@@ -1,23 +1,23 @@
 ---
-title: Attach the Rate Limiting Plugin
+title: Attach the Limit Count Plugin
 reading_time: auto
 show_feedback: true
 ---
 
-So far, you know how to configure Application and API to let your APISIX instance run as your expectation. This section will extend the API with the [Rate Limiting Plugin](../guides/traffic-management/rate-limiting.md). Rate Limiting protects your API from too many requests from being overwhelmed by a large number of requests.
+So far, you know how to configure Application and API to let your APISIX instance run as your expectation. This section will extend the API with the [Limit Count Plugin](../guides/traffic-management/rate-limiting-with-limit-count.md). Limit Count protects your API from too many requests from being overwhelmed by a large number of requests.
 
 ![JSON API detail](https://static.apiseven.com/2022/12/30/httpbin-json-api-detail.png)
 
 Enter the JSON API detail page and click on the **Add Plugin** button (wrapped by the black ellipse). API7 Cloud will open a popup window to add a new plugin.
 
-![Configure Rate Limiting Plugin](https://static.apiseven.com/2022/12/30/configure-rate-limiting-for-json-api.png)
+![Configure Limit Count Plugin](https://static.apiseven.com/2023/01/03/63b3dec6d86a6.png)
 
-Let's select the Rate Limiting plugin and fill out the form. In this case, we configure:
+Let's select the Limit Count plugin and fill out the form. In this case, we configure:
 
 1. A data plane instance only accepts five requests in a minute (for the JSON API);
 2. If the number of requests exceeds the limit, the data plane instance rejects the requests with the `429` status code, and the response body will be "Too many requests".
 
-Save the settings, and now let's try to verify the Rate Limiting Plugin.
+Save the settings, and now let's try to verify the Limit Count Plugin.
 
 Again, we'll use [curl](https://curl.se/) for the verification. This time we'll send requests continuously.
 
@@ -56,7 +56,7 @@ Apache APISIX wraps the error message in a JSON string.
 The throttling quota might already reset when you run the above command. Try a few times if you don't see this output.
 :::
 
-Congratulations, you've mastered using Rate Limiting plugin in your API.
+Congratulations, you've mastered using Limit Count plugin in your API.
 
 Next
 ----

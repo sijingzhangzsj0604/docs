@@ -1,5 +1,5 @@
 ---
-title: Rate Limiting Plugin Reference
+title: Limit Count Plugin Reference
 reading_time: auto
 show_feedback: true
 ---

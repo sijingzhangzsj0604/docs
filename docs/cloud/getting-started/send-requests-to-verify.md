@@ -67,4 +67,4 @@ Congratulations! Now that you test the HTTPBIN Application and its JSON API, eve
 Next
 ----
 
-[Attach the Rate Limiting Plugin](./attach-rate-limiting-plugin.md).
+[Attach the Limit Count Plugin](./attach-limit-count-plugin.md).

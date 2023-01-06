@@ -42,7 +42,7 @@ learn the details.
     * [JWT Auth](../guides/traffic-management/authentication/jwt-auth.md)
     * [Key Auth](../guides/traffic-management/authentication/key-auth.md)
     * [OpenID Connect](../guides/traffic-management/authentication/openid-connect.md)
-  * [Rate Limiting Plugin](../guides/traffic-management/rate-limiting.md)
+  * [Limit Count Plugin](../guides/traffic-management/rate-limiting-with-limit-count.md)
   * [Fault Injection Plugin](../guides/traffic-management/fault-injection.md)
   * [Redirect Plugin](../guides/traffic-management/redirect.md)
   * [Request Rewrite Plugin](../guides/traffic-management/transform-request.md)

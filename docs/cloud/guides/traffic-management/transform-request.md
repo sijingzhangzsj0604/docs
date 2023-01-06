@@ -7,7 +7,7 @@ show_feedback: true
 Sometimes you may need to transform the API requests before forwarding them to the backend services, such as adding/replacing some
 request headers, modify the request URI, and change the HTTP method.
 
-This guide tells you how to use the Request Rewrite plugin to do the request transforming.
+This guide tells you how to use the Proxy Rewrite plugin to do the request transforming.
 
 Prepare the Environment
 -----------------------
@@ -55,9 +55,9 @@ You can also combine the above transforming cases according to your actual situa
 
 ### Rewrite HTTP Method
 
-Let's create the Request Rewrite plugin (on the `anything` API) in which we rewrite the HTTP method to `GET`.
+Let's create the Proxy Rewrite plugin (on the `anything` API) in which we rewrite the HTTP method to `GET`.
 
-![Request Rewrite Plugin Rewrite HTTP Method](https://static.apiseven.com/2022/12/30/add-request-rewrite-plugin-rewrite-method.png)
+![Proxy Rewrite Plugin Rewrite HTTP Method](https://static.apiseven.com/2023/01/03/63b3dec90bcd0.png)
 
 Now let's send a request to verify it.
 
@@ -92,9 +92,9 @@ The original HTTP method is `POST,` and it's rewritten to `GET` (the `method` fi
 #### Replace URI
 
 Assume that we want to access the `/json` API when we access `/v1/anything`. In such a case, let's update the
-Request Rewrite plugin just like below:
+Proxy Rewrite plugin just like below:
 
-![Request Rewrite Plugin Replace URI](https://static.apiseven.com/2022/12/30/request-rewrite-plugin-replace-uri.png)
+![Proxy Rewrite Plugin Replace URI](https://static.apiseven.com/2023/01/03/63b3dec83bf7e.png)
 
 Now let's send a request and see the response.
 
@@ -133,7 +133,7 @@ As you can see, we got the JSON response, which means Apache APISIX accessed the
 Sometimes we want to replace the URI only if the current request URI meets some conditions. Under such a circumstance, we
 can use the regex replace, filling the regex pattern and the replacement pattern.
 
-![Rewrite Regex Replace URI](https://static.apiseven.com/2022/12/30/request-rewrite-plugin-regex-replace-uri.png)
+![Rewrite Regex Replace URI](https://static.apiseven.com/2023/01/03/63b3dec757bd5.png)
 
 :::tip
 The **New URI** can use the [capture group](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges#using_groups) so that
@@ -159,13 +159,13 @@ Hello, API7 Cloud!
 ### Modify Request Headers
 
 You may also want to operate (add, replace, delete) the HTTP request headers in the API Gateway for some business needs. Let's update the
-Request Rewrite plugin as per the rules below:
+Proxy Rewrite plugin as per the rules below:
 
 1. Add or replace the `Accept-Encoding` header, the value is `deflate`;
 2. Add or replace the `X-Proxy-Component` header, value is `Apache APISIX`;
 3. Delete the `User-Agent` header;
 
-![Request Rewrite Modify Request Headers](https://static.apiseven.com/2022/12/30/request-rewrite-modify-headers.png)
+![Proxy Rewrite Modify Request Headers](https://static.apiseven.com/2023/01/03/63b3dec64db38.png)
 
 ```shell
 curl http://127.0.0.1:9080/v1/anything -H 'Host: rewrite.httpbin.org' -H 'Accept-Encoding: gzip'
@@ -198,5 +198,5 @@ As you can see, Apache APISIX adds the `X-Proxy-Component` header, rewrites the 
 See Also
 --------
 
-* [Request Rewrite Plugin Reference](../../references/plugins/traffic-management/request-rewrite.md)
+* [Proxy Rewrite Plugin Reference](../../references/plugins/traffic-management/proxy-rewrite.md)
 * [Apache APISIX Proxy Rewrite Plugin](https://apisix.apache.org/docs/apisix/plugins/proxy-rewrite/)

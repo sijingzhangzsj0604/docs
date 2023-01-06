@@ -21,7 +21,7 @@
         "getting-started/create-httpbin-app",
         "getting-started/create-httpbin-api",
         "getting-started/send-requests-to-verify",
-        "getting-started/attach-rate-limiting-plugin",
+        "getting-started/attach-limit-count-plugin",
         "getting-started/summary"
       ]
     },
@@ -50,14 +50,15 @@
             "guides/product/how-to-deploy-apache-apisix",
             "guides/product/how-to-monitor-your-data-plane-instances",
             "guides/product/add-request-id-for-api-requests",
-            "guides/product/control-plane-settings"
+            "guides/product/control-plane-settings",
+            "guides/product/use-original-apache-apisix-plugins"
           ]
         },
         {
           "type": "category",
           "label": "Traffic Management",
           "items": [
-            "guides/traffic-management/rate-limiting",
+            "guides/traffic-management/rate-limiting-with-limit-count",
             "guides/traffic-management/canary-release",
             "guides/traffic-management/fault-injection",
             "guides/traffic-management/websocket-api",
@@ -131,11 +132,11 @@
               "type": "category",
               "label": "Traffic Management",
               "items": [
-                "references/plugins/traffic-management/rate-limiting",
+                "references/plugins/traffic-management/limit-count",
                 "references/plugins/traffic-management/authentication",
                 "references/plugins/traffic-management/fault-injection",
                 "references/plugins/traffic-management/redirect",
-                "references/plugins/traffic-management/request-rewrite",
+                "references/plugins/traffic-management/proxy-rewrite",
                 "references/plugins/traffic-management/response-rewrite"
               ]
             },

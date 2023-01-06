@@ -13,7 +13,7 @@ Your journey will be:
 3. Create the HTTPBIN Application;
 4. Create API for the HTTPBIN Application;
 5. Use [curl](https://curl.se/) to test if the API is working;
-6. Attach the [Rate Limiting Plugin](../guides/traffic-management/rate-limiting.md) to the API;
+6. Attach the [Limit Count Plugin](../guides/traffic-management/rate-limiting-with-limit-count.md) to the API;
 7. Summary.
 
 Are you ready? Here we go!

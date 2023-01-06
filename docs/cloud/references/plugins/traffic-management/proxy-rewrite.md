@@ -1,5 +1,5 @@
 ---
-title: Request Rewrite Plugin Reference
+title: Proxy Rewrite Plugin Reference
 reading_time: auto
 show_feedback: true
 ---
