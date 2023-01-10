@@ -241,7 +241,7 @@ Since this release, the minimum required version of the [Apache APISIX](https://
 
 * Refactored the Application Details page layout and supported editing sub-resources of the Application.
 * Fixed the alert due to empty [Consumer](../concepts/consumer.md) description field.
-* Fixed the minimum value of count to `1` when using the [Rate Limiting Policy](../guides/traffic-management/rate-limiting-with-limit-count.md).
+* Fixed the minimum value of count to `1` when using the [Rate Limiting Policy](../guides/traffic-management/limit-count.md).
 * Fixed the incorrect redirect port when the Application protocol is `HTTPS`.
 * Fixed some bugs which hurt the stability.
 * Optimized the API Reference.

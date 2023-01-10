@@ -4,7 +4,7 @@ reading_time: auto
 show_feedback: true
 ---
 
-So far, you know how to configure Application and API to let your APISIX instance run as your expectation. This section will extend the API with the [Limit Count Plugin](../guides/traffic-management/rate-limiting-with-limit-count.md). Limit Count protects your API from too many requests from being overwhelmed by a large number of requests.
+So far, you know how to configure Application and API to let your APISIX instance run as your expectation. This section will extend the API with the [Limit Count Plugin](../guides/traffic-management/limit-count.md). Limit Count protects your API from too many requests from being overwhelmed by a large number of requests.
 
 ![JSON API detail](https://static.apiseven.com/2022/12/30/httpbin-json-api-detail.png)
 

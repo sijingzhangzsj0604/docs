@@ -34,12 +34,12 @@
           "label": "Security",
           "items": [
             "guides/security/https-only-application",
-            "guides/security/enable-cors",
+            "guides/security/cors",
             "guides/security/enable-mutual-tls",
-            "guides/security/restrict-api-client-ip-addresses",
+            "guides/security/ip-restriction",
             "guides/security/enable-upstream-mutual-tls",
-            "guides/security/enable-acl",
-            "guides/security/enable-csrf-prevention"
+            "guides/security/acl",
+            "guides/security/csrf"
           ]
         },
         {
@@ -49,7 +49,7 @@
             "guides/product/personal-access-token",
             "guides/product/how-to-deploy-apache-apisix",
             "guides/product/how-to-monitor-your-data-plane-instances",
-            "guides/product/add-request-id-for-api-requests",
+            "guides/product/request-id",
             "guides/product/control-plane-settings",
             "guides/product/use-original-apache-apisix-plugins"
           ]
@@ -58,12 +58,12 @@
           "type": "category",
           "label": "Traffic Management",
           "items": [
-            "guides/traffic-management/rate-limiting-with-limit-count",
+            "guides/traffic-management/limit-count",
             "guides/traffic-management/canary-release",
             "guides/traffic-management/fault-injection",
             "guides/traffic-management/websocket-api",
-            "guides/traffic-management/transform-request",
-            "guides/traffic-management/transform-response",
+            "guides/traffic-management/proxy-rewrite",
+            "guides/traffic-management/response-rewrite",
             "guides/traffic-management/redirect",
             {
               "type": "category",
@@ -143,25 +143,19 @@
             {
               "type": "category",
               "label": "Observability",
-              "items": [
-                "references/plugins/observability/logging"
-              ]
+              "items": ["references/plugins/observability/logging"]
             },
             {
               "type": "category",
               "label": "Product",
-              "items": [
-                "references/plugins/product/request-id"
-              ]
+              "items": ["references/plugins/product/request-id"]
             }
           ]
         },
         {
           "type": "category",
           "label": "Product",
-          "items": [
-            "references/product/upstream-health-check"
-          ]
+          "items": ["references/product/upstream-health-check"]
         }
       ]
     }

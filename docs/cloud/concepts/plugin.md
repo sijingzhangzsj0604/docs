@@ -31,10 +31,10 @@ API7 Cloud provides several plugins for different purposes. Please refer to the 
 learn the details.
 
 * Security
-  * [ACL Plugin](../guides/security/enable-acl.md)
-  * [CORS Plugin](../guides/security/enable-cors.md)
-  * [CSRF Plugin](../guides/security/enable-csrf-prevention.md)
-  * [IP Restriction Plugin](../guides/security/restrict-api-client-ip-addresses.md)
+  * [ACL Plugin](../guides/security/acl.md)
+  * [CORS Plugin](../guides/security/cors.md)
+  * [CSRF Plugin](../guides/security/csrf.md)
+  * [IP Restriction Plugin](../guides/security/ip-restriction.md)
 * Traffic Management
   * Authentication Plugin
     * [Basic Auth](../guides/traffic-management/authentication/basic-auth.md)
@@ -42,13 +42,13 @@ learn the details.
     * [JWT Auth](../guides/traffic-management/authentication/jwt-auth.md)
     * [Key Auth](../guides/traffic-management/authentication/key-auth.md)
     * [OpenID Connect](../guides/traffic-management/authentication/openid-connect.md)
-  * [Limit Count Plugin](../guides/traffic-management/rate-limiting-with-limit-count.md)
+  * [Limit Count Plugin](../guides/traffic-management/limit-count.md)
   * [Fault Injection Plugin](../guides/traffic-management/fault-injection.md)
   * [Redirect Plugin](../guides/traffic-management/redirect.md)
-  * [Request Rewrite Plugin](../guides/traffic-management/transform-request.md)
-  * [Response Rewrite Plugin](../guides/traffic-management/transform-response.md)
+  * [Request Rewrite Plugin](../guides/traffic-management/proxy-rewrite.md)
+  * [Response Rewrite Plugin](../guides/traffic-management/response-rewrite.md)
 * Product
-  * [Request ID Plugin](../guides/product/add-request-id-for-api-requests.md)
+  * [Request ID Plugin](../guides/product/request-id.md)
 * Observability
   * [Logging Plugin with HTTP Logger](../guides/observability/log-collection-with-http-logger.md)
   * [Logging Plugin with Kafka Logger](../guides/observability/log-collection-with-kafka-logger.md)

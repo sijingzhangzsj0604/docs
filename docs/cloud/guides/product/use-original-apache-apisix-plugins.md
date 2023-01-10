@@ -30,15 +30,15 @@ and search the plugin name.
 For most original Apache APISIX plugins, API7 Cloud doesn't implement the UI form for the following plugins
 own the UI form, and users don't have to configure them via the JSON editor.
 
-* [CORS](../security/enable-cors.md) plugin
-* [CSRF](../security/enable-csrf-prevention.md) plugin
-* [Limit Count](../traffic-management/rate-limiting-with-limit-count.md) plugin
-* [IP Restriction](../security/restrict-api-client-ip-addresses.md) plugin
-* [Proxy Rewrite](../traffic-management/transform-request.md) plugin
-* [Response Rewrite](../traffic-management/transform-response.md) plugin
-* [ACL](../security/enable-acl.md) plugin (this is a custom plugin developed by API7 Cloud)
+* [CORS](../security/cors.md) plugin
+* [CSRF](../security/csrf.md) plugin
+* [Limit Count](../traffic-management/limit-count.md) plugin
+* [IP Restriction](../security/ip-restriction.md) plugin
+* [Proxy Rewrite](../traffic-management/proxy-rewrite.md) plugin
+* [Response Rewrite](../traffic-management/response-rewrite.md) plugin
+* [ACL](../security/acl.md) plugin (this is a custom plugin developed by API7 Cloud)
 * [Logging](../observability/log-collection-with-http-logger.md) plugin
 * [Authentication](../traffic-management/authentication/basic-auth.md) plugin
 * [Redirect](../traffic-management/redirect.md) plugin
-* [Request ID](./add-request-id-for-api-requests.md) plugin
+* [Request ID](./request-id.md) plugin
 * [Fault Injection](../traffic-management/fault-injection.md) plugin
