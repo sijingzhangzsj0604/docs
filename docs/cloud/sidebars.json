@@ -68,6 +68,10 @@
             {
               "type": "category",
               "label": "Authentication",
+              "link": {
+                "type": "doc",
+                "id": "guides/traffic-management/authentication/README"
+              },
               "items": [
                 "guides/traffic-management/authentication/key-auth",
                 "guides/traffic-management/authentication/hmac-auth",
@@ -88,6 +92,10 @@
         {
           "type": "category",
           "label": "Observability",
+          "link": {
+            "type": "doc",
+            "id": "guides/observability/README"
+          },
           "items": [
             "guides/observability/log-collection-with-http-logger",
             "guides/observability/log-collection-with-kafka-logger",
