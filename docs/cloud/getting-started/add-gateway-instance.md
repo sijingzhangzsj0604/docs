@@ -1,10 +1,10 @@
 ---
-title: Add a Data Plane Instance
+title: Add a Gateway Instance
 reading_time: auto
 show_feedback: true
 ---
 
-The first and most important thing that you need to do after signing up is to add a data plane instance ([Apache APISIX](https://apisix.apache.org/)) and let it connect to API7 Cloud.
+The first and most important thing that you need to do after signing up is to add a gateway instance ([Apache APISIX](https://apisix.apache.org/)) and let it connect to API7 Cloud.
 
 As a demo, we'll use [Cloud CLI](https://github.com/api7/cloud-cli) to deploy an APISIX instance on Docker, so before you go ahead, make sure:
 
@@ -64,9 +64,9 @@ Container ID: 0904c39c2551
 APISIX ID: 19cb8b57-6436-40bd-8dc2-d3571a356b86
 ```
 
-And now, let's check the Data Plane Instances table, and you'll see the APISIX instance you just deployed.
+And now, let's check the Gateway Instances table, and you'll see the APISIX instance you just deployed.
 
-![APISIX instance on the table](https://static.apiseven.com/2022/12/30/see-apisix-instance-on-table.png)
+![APISIX instance on the table](https://static.apiseven.com/uploads/2023/01/13/XgsKjqHm_see-apisix-instance.png)
 
 If you want to stop the APISIX instance, just run the command below:
 

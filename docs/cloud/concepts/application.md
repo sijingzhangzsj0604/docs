@@ -74,7 +74,7 @@ Some fields are vital for the API to work.
 Which protocol the Application will use. Currently, candidates are `HTTP`, `HTTPS`, and `HTTP, HTTPS`.
 
 * `HTTP`. The Application only handles HTTP traffic.
-* `HTTPS`. The Application only handles HTTPS traffic. In such a case, data plane instances will redirect requests sent to the HTTP port to the HTTPS port.
+* `HTTPS`. The Application only handles HTTPS traffic. In such a case, gateway instances will redirect requests sent to the HTTP port to the HTTPS port.
 * `HTTP, HTTPS`. The Application handles both HTTP and HTTPS traffic.
 
 ### Path Prefix

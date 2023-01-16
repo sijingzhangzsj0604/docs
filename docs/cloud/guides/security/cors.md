@@ -30,8 +30,8 @@ In the above image, you can see:
 How to Test the CORS Plugin
 ---------------------------
 
-First, deploy a data plane instance and connect to the API7 Cloud.
-Please see [Add a data plane instance and connect it to the API7 Cloud](../../getting-started/add-data-plane-instance.md) to learn the details.
+First, deploy a gateway instance and connect to the API7 Cloud.
+Please see [Add a gateway instance and connect it to the API7 Cloud](../../getting-started/add-gateway-instance.md) to learn the details.
 
 Then we can send a request to verify the CORS plugin.
 

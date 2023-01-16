@@ -6,7 +6,7 @@ show_feedback: true
 
 So far, you know how to configure Application and API to let your APISIX instance run as your expectation. This section will extend the API with the [Limit Count Plugin](../guides/traffic-management/limit-count.md). Limit Count protects your API from too many requests from being overwhelmed by a large number of requests.
 
-![JSON API detail](https://static.apiseven.com/2022/12/30/httpbin-json-api-detail.png)
+![JSON API detail](https://static.apiseven.com/uploads/2023/01/12/1n3Kv5rc_Screenshot%202023-01-12%20at%2010.13.59.png)
 
 Enter the JSON API detail page and click on the **Add Plugin** button (wrapped by the black ellipse). API7 Cloud will open a popup window to add a new plugin.
 
@@ -14,8 +14,8 @@ Enter the JSON API detail page and click on the **Add Plugin** button (wrapped b
 
 Let's select the Limit Count plugin and fill out the form. In this case, we configure:
 
-1. A data plane instance only accepts five requests in a minute (for the JSON API);
-2. If the number of requests exceeds the limit, the data plane instance rejects the requests with the `429` status code, and the response body will be "Too many requests".
+1. A gateway instance only accepts five requests in a minute (for the JSON API);
+2. If the number of requests exceeds the limit, the gateway instance rejects the requests with the `429` status code, and the response body will be "Too many requests".
 
 Save the settings, and now let's try to verify the Limit Count Plugin.
 

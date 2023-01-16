@@ -4,7 +4,7 @@ reading_time: auto
 show_feedback: true
 ---
 
-In the [Overview](./api7-cloud.md) section, we know the data plane solution of API7 Cloud is [Apache APISIX](https://apisix.apache.org/),
+In the [Overview](./api7-cloud.md) section, we know the gateway solution of API7 Cloud is [Apache APISIX](https://apisix.apache.org/),
 API7 Cloud uses [the official Apache APISIX distributions](https://apisix.apache.org/downloads/) as the base, with an extra Lua module
 to communicate with API7 Cloud.
 
@@ -32,9 +32,9 @@ Apache APISIX will send periodic heartbeat probes (per `10s`) to keep it alive.
 How to check if the Apache APISIX instance is registered
 --------------------------------------------------------
 
-You can see registered Apache APISIX instances on the API7 Cloud overview page (Data Plane Instances section).
+You can see registered Apache APISIX instances on the API7 Cloud overview page (Gateway Instances section).
 
-![Apache APISIX Status](https://static.apiseven.com/2022/12/30/apisix-status.png)
+![Apache APISIX Status](https://static.apiseven.com/uploads/2023/01/13/3IY9aEGa_gateway-instances.png)
 
 :::tip
 Learn [How to Deploy Apache APISIX](../guides/product/how-to-deploy-apache-apisix.md) for more details.

@@ -88,4 +88,4 @@ What's Next
 -----------
 
 * [How to configure Cloud CLI](https://github.com/api7/cloud-cli/blob/main/docs/configuring-cloud-cli.md)
-* [How to add Data Plane instance](../../getting-started/add-data-plane-instance.md)
+* [How to add a gateway instance](../../getting-started/add-gateway-instance.md)

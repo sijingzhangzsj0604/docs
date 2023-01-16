@@ -17,7 +17,7 @@
       },
       "items": [
         "getting-started/setup-account-login",
-        "getting-started/add-data-plane-instance",
+        "getting-started/add-gateway-instance",
         "getting-started/create-httpbin-app",
         "getting-started/create-httpbin-api",
         "getting-started/send-requests-to-verify",
@@ -48,9 +48,9 @@
           "items": [
             "guides/product/personal-access-token",
             "guides/product/how-to-deploy-apache-apisix",
-            "guides/product/how-to-monitor-your-data-plane-instances",
+            "guides/product/how-to-monitor-your-gateway-instances",
             "guides/product/request-id",
-            "guides/product/control-plane-settings",
+            "guides/product/cluster-settings",
             "guides/product/use-original-apache-apisix-plugins"
           ]
         },
@@ -108,7 +108,7 @@
       "type": "category",
       "label": "Concepts",
       "items": [
-        "concepts/control-plane",
+        "concepts/cluster",
         "concepts/application",
         "concepts/api",
         "concepts/consumer",

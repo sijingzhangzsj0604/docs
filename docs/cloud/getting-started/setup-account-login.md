@@ -24,4 +24,4 @@ Note if this is your first time signing in to the console, API7 Cloud will ask y
 Next
 ----
 
-- [Add Data Plane Instance](./add-data-plane-instance.md)
+- [Add a Gateway Instance](./add-gateway-instance.md)

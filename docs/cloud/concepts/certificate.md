@@ -23,7 +23,7 @@ is in the certificate's SAN list.
 > Q: What if I have multiple certificates for the same Application
 > since their SAN lists are interlaced?
 >
-> A: In such a case, it depends on the strategy of the data plane (Apache APISIX)
+> A: In such a case, it depends on the strategy of the gateway instance (Apache APISIX)
 > to choose the certificate in a TLS handshake. But it doesn't matter
 > as the certificate is regular (e.g., not expired and not revoked).
 > If you're interested in it, see [Apache APISIX Router RadixTree](https://apisix.apache.org/docs/apisix/router-radixtree)

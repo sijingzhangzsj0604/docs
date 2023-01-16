@@ -217,18 +217,18 @@ How to check Apache APISIX running status
 ------------------------------------------
 
 You can see the status of Apache APISIX in
-the **Data Plane Instances** section (on the **Overview** page).
+the **Gateway Instances** section (on the **Overview** page).
 
-![Apache APISIX Status](https://static.apiseven.com/2022/12/30/apisix-status.png)
+![Apache APISIX Status](https://static.apiseven.com/uploads/2023/01/13/3IY9aEGa_gateway-instances.png)
 
 In this list, we can see the following fields:
 
 1. `ID`: The Apache APISIX ID
-2. `STATUS`: The communication status between Apache APISIX and API7 Cloud
-3. `VERSION`: The version of Apache APISIX
+2. `VERSION`: The version of Apache APISIX
+3. `STATUS`: The communication status between Apache APISIX and API7 Cloud
 4. `HOSTNAME`: The hostname of the machine or container where the Apache APISIX instance is running
-5. `IP ADDRESS`: The IP address of the machine or container where the Apache APISIX instance is running
-6. `LAST REPORT TIME`: The last time Apache APISIX sends a heartbeat to API7 Cloud
+5. `UPTIME`: The running time of this instance
+6. `LAST REPORTED TIME`: The last time Apache APISIX sends a heartbeat to API7 Cloud
 
 :::note
 The IP address you see is the IP address of the machine or container, not the public IP address.

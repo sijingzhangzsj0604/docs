@@ -9,7 +9,7 @@ You'll begin your API7 Cloud journey, especially by learning the steps to manage
 Your journey will be:
 
 1. Create an account and login to API7 Cloud;
-2. Add a data plane instance and connect it to the API7 Cloud;
+2. Add a gateway instance and connect it to the API7 Cloud;
 3. Create the HTTPBIN Application;
 4. Create API for the HTTPBIN Application;
 5. Use [curl](https://curl.se/) to test if the API is working;

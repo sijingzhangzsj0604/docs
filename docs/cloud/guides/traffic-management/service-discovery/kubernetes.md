@@ -79,11 +79,11 @@ kubectl get secrets $SECRET_NAME -n apisix -ojsonpath='{.data.token}' | base64 -
 
 First, let's create a Kubernetes-type service registry on API7 Cloud.
 
-1. Click on the **Control Plane** option in the left sidebar to enter the control plane settings page
+1. Click on the **Cluster** option in the left sidebar to enter the cluster settings page
 2. Scroll down the page and click on the **Add Registry** button
 3. Fill in the service registry form
 
-![CP Enable K8s SD](https://static.apiseven.com/2022/12/30/cp-enable-k8s-sd.png)
+![CP Enable K8s SD](https://static.apiseven.com/uploads/2023/01/12/X0WsJXGJ_cluster-enable-k8s-sd.png)
 ![CP Fill K8s SD Form](https://static.apiseven.com/2022/12/30/cp-fill-k8s-service-registry-form.png)
 
 In this case:
