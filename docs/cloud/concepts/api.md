@@ -28,7 +28,7 @@ Get API Details
 On the Application details page, please scroll down to the API section,
 search for the API you want to see, and click on its name. API7 Cloud will redirect you to the API details page.
 
-![HTTPBIN JSON API DETAIL](https://static.apiseven.com/2022/12/30/httpbin-json-api-detail.png)
+![HTTPBIN JSON API DETAIL](https://static.apiseven.com/uploads/2023/01/12/1n3Kv5rc_Screenshot%202023-01-12%20at%2010.13.59.png)
 
 Update API
 ----------
@@ -37,7 +37,7 @@ You can update an API after you enter the API details page.
 
 API information is categorized into **Basics**, **Fine Grained Route Control**, **Plugins**, and each of them can be edited separately.
 
-![Update API in API Details Page](https://static.apiseven.com/2022/12/30/httpbin-app-json-api-detail-with-edit-mark.png)
+![Update API in API Details Page](https://static.apiseven.com/uploads/2023/01/13/6nqAMEnp_json-api-with-edit-mark.png)
 
 Delete API
 ----------
