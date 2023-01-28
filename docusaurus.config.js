@@ -91,6 +91,15 @@ const config = {
       }
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'apisix',
+        path: 'docs/apisix',
+        routeBasePath: '/apisix',
+        sidebarPath: require.resolve('./docs/apisix/sidebars.js')
+      }
+    ],
+    [
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
