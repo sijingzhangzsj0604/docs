@@ -1,0 +1,19 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "link": {
+        "type": "doc",
+        "id": "getting-started/README"
+      },
+      "items": [
+        "getting-started/README",
+        "getting-started/configure-routes",
+        "getting-started/load-balancing",
+        "getting-started/rate-limiting",
+        "getting-started/key-authentication"
+      ]
+    }
+  ]
+}

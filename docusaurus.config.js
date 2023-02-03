@@ -109,6 +109,9 @@ const config = {
           }, {
             from: "/enterprise",
             to: "/enterprise/introduction",
+          }, {
+            from: "/apisix",
+            to: "/apisix/getting-started",
           }
         ]
       }
@@ -137,6 +140,10 @@ const config = {
               {
                 label: 'Enterprise',
                 href: '/enterprise/introduction',
+              },
+              {
+                label: 'Apache APISIX',
+                href: '/apisix/getting-started',
               }
             ],
           },
