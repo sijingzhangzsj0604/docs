@@ -207,7 +207,15 @@ const config = {
     }),
 
   clientModules: [
-    require.resolve('./scripts/listenProductsChange.ts')
+    require.resolve('./scripts/listenProductsChange.ts'),
+    require.resolve('./scripts/olvy.js'),
+  ],
+
+  scripts: [
+    {
+      src: 'https://app.olvy.co/scriptV2.js',
+      async: true,
+    }
   ]
 };
 
