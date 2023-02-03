@@ -180,6 +180,30 @@ const config = {
         defaultMode: "light",
         disableSwitch: true,
       },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'GO7A0E5H01',
+
+        // Public API key: it is safe to commit it
+        apiKey: '4039491eca368ef854448f6619fb9a83',
+
+        indexName: 'api7',
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+        replaceSearchResultPathname: {
+          from: '/docs/', // or as RegExp: /\/docs\//
+          to: '/',
+        },
+
+        // Optional: Algolia search parameters
+        searchParameters: {},
+
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+      },
     }),
 
   clientModules: [
