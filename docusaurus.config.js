@@ -160,6 +160,16 @@ const config = {
             className: "navbar-enterprise-whitepaper"
           },
           {
+            href: 'https://api7.ai',
+            label: 'API7.ai',
+            position: 'right',
+          },
+          {
+            href: 'https://api7.ai/contact',
+            label: 'Contact Us',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/api7/docs',
             label: 'GitHub',
             position: 'right',
