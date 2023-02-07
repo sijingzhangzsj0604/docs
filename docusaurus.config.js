@@ -4,6 +4,15 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const getEditUrl = (props) => {
+  const {
+    projectName, docPath, version,
+  } = props;
+  const dir = version === 'current' ? `docs/${projectName}` : `${projectName}/version-${version}`;
+
+  return `https://github.com/api7/docs/edit/main/${dir}/${docPath}`
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'API7 Docs',
@@ -69,7 +78,12 @@ const config = {
         id: 'cloud',
         path: 'docs/cloud',
         routeBasePath: '/cloud',
-        sidebarPath: require.resolve('./docs/cloud/sidebars.json')
+        sidebarPath: require.resolve('./docs/cloud/sidebars.json'),
+        editUrl: (props) =>
+          getEditUrl({
+            ...props,
+            projectName: 'cloud',
+          }),
       }
     ],
     [
@@ -78,7 +92,12 @@ const config = {
         id: 'enterprise-whitepaper',
         path: 'docs/enterprise-whitepaper',
         routeBasePath: '/enterprise-whitepaper',
-        sidebarPath: require.resolve('./docs/enterprise-whitepaper/sidebars.json')
+        sidebarPath: require.resolve('./docs/enterprise-whitepaper/sidebars.json'),
+        editUrl: (props) =>
+          getEditUrl({
+            ...props,
+            projectName: 'enterprise-whitepaper',
+          }),
       }
     ],
     [
@@ -87,7 +106,12 @@ const config = {
         id: 'enterprise',
         path: 'docs/enterprise',
         routeBasePath: '/enterprise',
-        sidebarPath: require.resolve('./docs/enterprise/sidebars.js')
+        sidebarPath: require.resolve('./docs/enterprise/sidebars.js'),
+        editUrl: (props) =>
+          getEditUrl({
+            ...props,
+            projectName: 'enterprise_versioned_docs',
+          }),
       }
     ],
     [
@@ -96,7 +120,12 @@ const config = {
         id: 'apisix',
         path: 'docs/apisix',
         routeBasePath: '/apisix',
-        sidebarPath: require.resolve('./docs/apisix/sidebars.js')
+        sidebarPath: require.resolve('./docs/apisix/sidebars.js'),
+        editUrl: (props) =>
+          getEditUrl({
+            ...props,
+            projectName: 'apisix_versioned_docs',
+          }),
       }
     ],
     [
