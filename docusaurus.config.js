@@ -252,6 +252,9 @@ const config = {
 
   scripts: [
     {
+      src: '/_vercel/insights/script.js',
+      async: true,
+    }, {
       src: 'https://app.olvy.co/scriptV2.js',
       async: true,
     }
