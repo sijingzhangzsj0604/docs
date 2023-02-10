@@ -4,7 +4,17 @@ reading_time: auto
 show_feedback: true
 ---
 
-# 2023.01.18
+## 2023.02.10
+
+In this release, we support the plugin management feature, so that you can load/unload plugins for the gateway cluster.
+
+### API7 Cloud
+
+* Support the plugin management feature in **Cluster > Plugin Management**
+* Now the password in sign up form can be visible or invisible
+* Fixed some known issues to enhance the developer experience
+
+## 2023.01.18
 
 This is the last release before 2023 Spring festival. This is a release without so many new features,
 but with some notable changes.
@@ -24,7 +34,7 @@ Upgrade [Cloud CLI](https://github.com/api7/cloud-cli) to [0.25.0](https://githu
 * Use the new concepts: cluster and gateway instance
 * Use Cloud Go SDK to communicate with API7 Cloud
 
-# 2023.01.05
+## 2023.01.05
 
 We made some plugin refactors in this release so that plugins are consistent
 with ones in Apache APISIX.
