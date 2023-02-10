@@ -1,6 +1,11 @@
 {
   "docs": [
     {
+      "type": "doc",
+      "label": "Documentation",
+      "id": "documentation"
+    },
+    {
       "type": "category",
       "label": "Getting Started",
       "items": [

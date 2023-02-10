@@ -140,7 +140,7 @@ const config = {
             to: "/enterprise/introduction",
           }, {
             from: "/apisix",
-            to: "/apisix/getting-started",
+            to: "/apisix/documentation",
           }
         ]
       }
@@ -166,7 +166,7 @@ const config = {
           {
             position: "left",
             label: "Apache APISIX",
-            to: '/apisix/getting-started',
+            to: '/apisix/documentation',
           },
         ],
       },
