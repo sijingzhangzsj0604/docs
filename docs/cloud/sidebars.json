@@ -51,7 +51,8 @@
             "guides/product/how-to-monitor-your-gateway-instances",
             "guides/product/request-id",
             "guides/product/cluster-settings",
-            "guides/product/use-original-apache-apisix-plugins"
+            "guides/product/use-original-apache-apisix-plugins",
+            "guides/product/load-unload-plugins"
           ]
         },
         {
