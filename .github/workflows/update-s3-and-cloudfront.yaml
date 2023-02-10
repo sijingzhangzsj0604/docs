@@ -6,7 +6,6 @@ on:
 
 jobs:
   update-s3-and-cloudfront:
-    needs: [build-and-push]
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
