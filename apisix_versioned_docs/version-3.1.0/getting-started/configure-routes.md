@@ -10,11 +10,9 @@ This tutorial guides you on how to create one Route and validate it. You will co
 1. Create a Route with an example _Upstream_, which points to [httpbin.org](http://httpbin.org).
 2. Use _cURL_ to send a test request, showing how APISIX proxies and forwards the request.
 
-:::info
+## Prerequisites
 
-Complete the [Get APISIX](./) step before proceeding.
-
-:::
+1. Complete the [Get APISIX](./) step to install APISIX first.
 
 ## What's a Route
 
@@ -34,15 +32,10 @@ The following command creates one Route which matches all requests to the `http:
 
 [//]: <TODO: Add the link to the authorization of Admin API>
 
-:::caution
-
-The authorization of API is switched off for a better experience in this tutorial. If you deploy APISIX in the production environment, it's recommended to turn it on.
-
-:::
-
 ```sh
-curl "http://127.0.0.1:9180/apisix/admin/routes" -X POST -d '
+curl -i "http://127.0.0.1:9180/apisix/admin/routes" -X PUT -d '
 {
+  "id": "getting-started-ip",
   "uri": "/ip",
   "upstream": {
     "type": "roundrobin",
@@ -53,7 +46,9 @@ curl "http://127.0.0.1:9180/apisix/admin/routes" -X POST -d '
 }'
 ```
 
-## Validation
+You will receive an `HTTP/1.1 200 OK` response if the route was created successfully.
+
+## Validate
 
 ```sh
 curl "http://127.0.0.1:9080/ip"
@@ -69,4 +64,4 @@ The expected response is similar to the following:
 
 ## What's Next
 
-This tutorial creates one Route with only one target node. The next part will show you how to configure the load balancing with multiple target nodes.
+This tutorial creates one Route with only one target node. The next tutorial will show you how to configure the load balancing with multiple target nodes.

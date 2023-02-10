@@ -17,6 +17,12 @@ The quickstart script relies on several components:
 * [curl](https://curl.se/) is used to send requests to APISIX for validation.
 
 ## Get APISIX
+
+:::caution
+
+To provide a better experience in this tutorial, the authorization of Admin API is switched off by default. Please turn on the authorization of Admin API in the production environment.
+
+:::
         
 The APISIX can be easily installed and started with the quickstart script.
 
@@ -33,7 +39,7 @@ If everything is ok, you will see the following message.
 ```
 
 
-## Validation
+## Validate
 
 Once APISIX is running, you can use curl to access it. Send a simple HTTP request to validate if APISIX is working properly or not.
 
