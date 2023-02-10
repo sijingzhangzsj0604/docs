@@ -151,65 +151,28 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Docs',
-        logo: {
-          alt: 'API7 Docs',
-          src: 'https://static.apiseven.com/2022/10/02/63398bceeeac7.webp',
-        },
+        title: 'Docs Home',
         items: [
           {
-            type: 'dropdown',
-            label: 'Products',
-            position: 'left',
-            items: [
-              {
-                label: 'Cloud',
-                href: '/cloud/overview/api7-cloud',
-              },
-              {
-                label: 'Enterprise',
-                href: '/enterprise/introduction',
-              },
-              {
-                label: 'Apache APISIX',
-                href: '/apisix/getting-started',
-              }
-            ],
+            position: "left",
+            label: "Cloud",
+            to: '/cloud/overview/api7-cloud',
           },
           {
             position: "left",
-            label: "API Reference",
-            to: "/cloud/api",
-            className: "navbar-cloud-api-reference"
+            label: "Enterprise",
+            to: '/enterprise/introduction',
           },
           {
             position: "left",
-            label: "Whitepaper",
-            to: "/enterprise-whitepaper/introduction",
-            className: "navbar-enterprise-whitepaper"
-          },
-          {
-            href: 'https://api7.ai',
-            label: 'API7.ai',
-            position: 'right',
-          },
-          {
-            href: 'https://api7.ai/contact',
-            label: 'Contact Us',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/api7/docs',
-            label: 'GitHub',
-            position: 'right',
+            label: "Apache APISIX",
+            to: '/apisix/getting-started',
           },
         ],
       },
       metadata: [{ name: 'keywords', content: 'api7, apache apisix, premium support, enterprise, documentation, docs' }],
       footer: {
         style: 'dark',
-        links: [],
-        copyright: `Copyright © HONG KONG APISEVEN LIMITED. 2019 - ${new Date().getFullYear()}.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -246,7 +209,6 @@ const config = {
     }),
 
   clientModules: [
-    require.resolve('./scripts/listenProductsChange.ts'),
     require.resolve('./scripts/olvy.js'),
   ],
 
