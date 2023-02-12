@@ -32,9 +32,9 @@ const NavAccordion = (props: NavAccordionProps) => {
           </AccordionButton>
           <AccordionPanel pb="3" px="0" pt="0">
             {group.children.map((item, id) => (
-              <Stack key={id} spacing="1">
+              <Stack key={id} spacing="1" pt="12px">
                 {item.title && (
-                  <Stack spacing="4" direction="row" p="3">
+                  <Stack spacing="4" direction="row" p="3 3 3 0">
                     {item.icon_link && (
                       <Image
                         alt="placeholder"
@@ -53,10 +53,10 @@ const NavAccordion = (props: NavAccordionProps) => {
                     <Link
                       variant="menu"
                       href={link.href}
-                      target={link.href.indexOf('http') === -1 ? '' : '_blank'}
+                      target='_blank'
                       key={id}
                     >
-                      <Stack spacing="4" direction="row" pb="2" pl="12px">
+                      <Stack spacing="4" direction="row" pb="2">
                         {link.icon_link ? (
                           <Image
                             alt="placeholder"

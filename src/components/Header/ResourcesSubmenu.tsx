@@ -68,9 +68,7 @@ const ResourcesSubmenu: React.FC<DesktopNavData> = ({ data, title }) => {
                             <Link
                               variant="menu"
                               href={link.href}
-                              target={
-                                link.href.indexOf('http') === -1 ? '' : '_blank'
-                              }
+                              target='_blank'
                               key={id}
                             >
                               <Stack spacing="4" direction="row" pt="3">

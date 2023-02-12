@@ -2,6 +2,7 @@ export const links = [
   {
     title: 'Product',
     links: [
+      { label: 'Documentation', href: 'https://docs.api7.ai/apisix' },
       { label: 'API7 Cloud', href: 'https://api7.ai/cloud' },
       { label: 'API7 Enterprise', href: 'https://api7.ai/apisix-vs-api7' },
       { label: 'Commercial Support', href: 'https://api7.ai/support' },

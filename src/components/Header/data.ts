@@ -202,6 +202,10 @@ export const data: MobileNavData[] = [
     children: [...ossMobileLink],
   },
   {
+    label: 'Docs',
+    children: [...docs],
+  },
+  {
     label: 'Resources',
     children: [...developers],
   },
