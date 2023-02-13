@@ -50,6 +50,14 @@ const HeaderComponent = () => {
                 <ResourcesSubmenu data={company} title="Company" />
               </ButtonGroup>
               <HStack spacing="3">
+                <Link
+                  href="https://console.api7.cloud/"
+                  target="_blank"
+                  fontWeight="500"
+                  color="#141414"
+                >
+                  Login
+                </Link>
                 <Button
                   background={GRADIENT_PARAM}
                   color='#FFFFFF'

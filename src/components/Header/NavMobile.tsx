@@ -7,8 +7,8 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  HStack,
   Link,
+  Stack,
   useDisclosure,
 } from '@chakra-ui/react';
 import * as React from 'react';
@@ -45,7 +45,15 @@ const NavMobile = () => {
               </DrawerHeader>
               <DrawerBody>
                 <NavAccordion data={data} />
-                <HStack mt="6">
+                <Stack mt="6" spacing='3' textAlign='center'>
+                  <Link
+                    href="https://console.api7.cloud/"
+                    target="_blank"
+                    fontWeight="500"
+                    color="#141414"
+                  >
+                    Login
+                  </Link>
                   <Button
                     background={GRADIENT_PARAM}
                     color='#FFFFFF'
@@ -53,13 +61,14 @@ const NavMobile = () => {
                     flex="1"
                     fontWeight='500'
                     w="full"
+                    py='2'
                     as='a'
                     href='https://api7.ai/contact'
                     target='_blank'
                   >
                     Contact Us
                   </Button>
-                </HStack>
+                </Stack>
               </DrawerBody>
             </DrawerContent>
           </Drawer>
