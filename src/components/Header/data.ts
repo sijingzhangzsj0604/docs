@@ -26,7 +26,7 @@ export const products = [
     href: 'https://api7.ai/cloud',
     links: [
       {
-        title: 'Get started for free',
+        title: 'Get Started for Free',
         description: 'No credit card required',
         href: 'https://api7.ai/cloud',
       },
@@ -48,7 +48,7 @@ export const products = [
       },
       {
         title: 'API7 Whitepaper',
-        description: 'Helps understand the API7 product',
+        description: 'An overview of the API7 product',
         href: 'https://docs.api7.ai/enterprise-whitepaper/introduction',
       },
       {
@@ -57,8 +57,8 @@ export const products = [
         href: 'https://api7.ai/support',
       },
       {
-        title: 'Talk to Expert',
-        description: 'Communicate for better solution',
+        title: 'Talk to Experts',
+        description: 'Communicate for better solutions',
         href: 'https://api7.ai/contact',
       },
     ],
