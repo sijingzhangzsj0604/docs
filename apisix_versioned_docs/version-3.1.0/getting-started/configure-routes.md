@@ -3,36 +3,36 @@ title: Configure Routes
 slug: /getting-started/configure-routes
 ---
 
-Apache APISIX provides flexible gateway management capabilities based on _Route_, which defines the request's routing path and targets.
+Apache APISIX provides flexible gateway management capabilities based on _Routes_, where routing paths and targets are defined for requests. 
 
-This tutorial guides you on how to create one Route and validate it. You will complete the following steps:
+This tutorial guides you on how to create a route and validate it. You will complete the following steps:
 
-1. Create a Route with an example _Upstream_, which points to [httpbin.org](http://httpbin.org).
-2. Use _cURL_ to send a test request, showing how APISIX proxies and forwards the request.
+1. Create a route with a sample _upstream_ that points to [httpbin.org](http://httpbin.org).
+2. Use _cURL_ to send a test request to see how APISIX proxies and forwards the request.
 
-## Prerequisites
+## Prerequisite(s)
 
-1. Complete the [Get APISIX](./) step to install APISIX first.
+1. Complete [Get APISIX](./) to install APISIX.
 
-## What's a Route
+## What is a Route
 
-A Route is a routing path to the upstream targets. In [Apache APISIX](https://api7.ai/apisix), the Route matches the client's requests based on defined rules, loads and executes the corresponding plugins, then forwards the request to the specified upstream targets.
+A route is a routing path to upstream targets. In [Apache APISIX](https://api7.ai/apisix), routes are responsible for matching client's requests based on defined rules, loading and executing the corresponding plugins, as well as forwarding requests to the specified upstream services.
 
-One Route should have _uri_ and the corresponding Upstream at least.
+A route should have an _uri_ and a corresponding upstream at the minimum.
 
-## What's an Upstream
+## What is an Upstream
 
-An Upstream is a set of target nodes with the same work. The Upstream defines the virtual host abstraction that performs load balancing on a given set of service nodes according to the configured rules.
+An upstream is a set of target nodes with the same work. It defines a virtual host abstraction that performs load balancing on a given set of service nodes according to the configured rules.
 
 ## Create a Route
 
-In this section, let's create a Route to forward client requests to the [httpbin.org](http://httpbin.org), which is a public HTTP Request and Response service.
+In this section, you will create a route that forwards client requests to [httpbin.org](http://httpbin.org), a public HTTP request and response service.
 
-The following command creates one Route which matches all requests to the `http://127.0.0.1:9080/ip` endpoint, forwards them to the [httpbin.org/ip](http://httpbin.org/ip), and returns the requester's IP address.
+The following command creates a route, which should forward all requests sent to `http://127.0.0.1:9080/ip` to [httpbin.org/ip](http://httpbin.org/ip):
 
 [//]: <TODO: Add the link to the authorization of Admin API>
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9180/apisix/admin/routes" -X PUT -d '
 {
   "id": "getting-started-ip",
@@ -50,7 +50,7 @@ You will receive an `HTTP/1.1 200 OK` response if the route was created successf
 
 ## Validate
 
-```sh
+```shell
 curl "http://127.0.0.1:9080/ip"
 ```
 
@@ -64,4 +64,4 @@ The expected response is similar to the following:
 
 ## What's Next
 
-This tutorial creates one Route with only one target node. The next tutorial will show you how to configure the load balancing with multiple target nodes.
+This tutorial creates a route with only one target node. In the next tutorial, you will learn how to configure load balancing with multiple target nodes.

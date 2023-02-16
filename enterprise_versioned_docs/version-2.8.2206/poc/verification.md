@@ -5,7 +5,7 @@ tags:
   - API7 Enterprise
 ---
 
-### Prerequisites
+### Prerequisite(s)
 
 Create the required clusters, work partitions, roles, and user resources.
 

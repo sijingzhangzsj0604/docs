@@ -3,22 +3,22 @@ title: Load Balancing
 slug: /getting-started/load-balancing
 ---
 
-Load balancing manages traffic between clients and servers, it decides which server will handle a specific request, and it allows for improved performance, scalability, and reliability. It's essential for any servers that need to process large volume of traffic. 
+Load balancing manages traffic between clients and servers. It is a mechanism used to decide which server handles a specific request, allowing for improved performance, scalability, and reliability. Load balancing is a key consideration in designing systems that need to handle a large volume of traffic. 
 
-Apache APISIX supports weighted round-robin load balancing, incoming traffic are distributed across a set of servers in a cyclical pattern, with each server taking a turn in a predefined order.
+Apache APISIX supports weighted round-robin load balancing, in which incoming traffic are distributed across a set of servers in a cyclical pattern, with each server taking a turn in a predefined order.
 
-In this tutorial, you will create one Route with two upstream services, then enable round-robin load balancing to distribute traffic between the two services.
+In this tutorial, you will create a route with two upstream services and enable round-robin load balancing to distribute traffic between the two services.
 
-## Prerequisites
+## Prerequisite(s)
 
-1. Complete the [Get APISIX](./) to install APISIX first.
+1. Complete [Get APISIX](./) to install APISIX.
 2. Understand APISIX [Route and Upstream](./configure-routes#whats-a-route).
 
 ## Enable Load Balancing
 
-Let's create a Route with two upstream services. All requests to the `/headers` endpoint are forwarded to the services ([httpbin.org](https://httpbin.org/headers) and [mock.api7.ai](https://mock.api7.ai/headers)), which respond with the requester's headers.
+Let's create a route with two upstream services. All requests sent to the `/headers` endpoint will be forwarded to [httpbin.org](https://httpbin.org/headers) and [mock.api7.ai](https://mock.api7.ai/headers), which should echo back the requester's headers.
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9180/apisix/admin/routes" -X PUT -d '
 {
   "id": "getting-started-headers",
@@ -38,10 +38,8 @@ curl -i "http://127.0.0.1:9180/apisix/admin/routes" -X PUT -d '
 You will receive an `HTTP/1.1 200 OK` response if the route was created successfully.
 
 :::info
-
-1. The `pass_host` field is set to `node` to pass the host header, which comes from `upstream.nodes` to the upstream service.
-2. The `scheme` field is set to `https` to enable TLS when sending requests to the upstream service.
-
+1. The `pass_host` field is set to `node` to pass the host header to the upstream.
+2. The `scheme` field is set to `https` to enable TLS when sending requests to the upstream.
 :::
 
 ## Validate
@@ -76,13 +74,13 @@ From `mock.api7.ai`:
 }
 ```
 
-Let's generate 100 requests to test the load-balancing effect.
+Let's generate 100 requests to test the load-balancing effect:
 
-```sh
+```shell
 hc=$(seq 100 | xargs -i curl "http://127.0.0.1:9080/headers" -sL | grep "httpbin" | wc -l); echo httpbin.org: $hc, mock.api7.ai: $((100 - $hc))
 ```
 
-The results are as follows, the response changes between the two services, and the number of responses from the two services are close.
+The result shows the requests were distributed over the two services almost equally:
 
 ```text
 httpbin.org: 51, mock.api7.ai: 49
@@ -90,4 +88,4 @@ httpbin.org: 51, mock.api7.ai: 49
 
 ## What's Next
 
-You have learned how to configure load balancing now. The next tutorial will guide you on how to configure the key authentication.
+You have learned how to configure load balancing. In the next tutorial, you will learn how to configure key authentication.

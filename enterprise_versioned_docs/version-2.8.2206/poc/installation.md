@@ -10,7 +10,7 @@ tags:
 
 ![Typology](https://static.apiseven.com/2022/12/30/63ae8ddc41739.png)
 
-## Prerequisites
+## Prerequisite(s)
 
 |       Resource        |                             Description                             |
 | :-------------------: | :-----------------------------------------------------------------: |

@@ -40,10 +40,11 @@ Key authentication is a relatively simple but widely used authentication approac
 
 ## Enable Key Authentication
 
-### Prerequisites
+### Prerequisite(s)
 
-1. Complete the [Get APISIX](./) step to install APISIX first.
-2. Complete the [Configure Routes](./configure-routes#whats-a-route) step.
+1. Complete [Get APISIX](./) to install APISIX.
+2. Complete [Configure Routes](./configure-routes#whats-a-route).
+
 ### Create a Consumer
 
 Let's create a consumer named `tom`, and enable the `key-auth` plugin with the key `secret-key`, which means all requests with the key `secret-key` are considered from `tom`.
@@ -54,7 +55,7 @@ Please use a complex key in the Production environment.
 
 :::
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9180/apisix/admin/consumers" -X PUT -d '
 {
   "username": "tom",
@@ -72,7 +73,7 @@ You will receive an `HTTP/1.1 200 OK` response if the consumer was created succe
 
 The following route inherits from [Configure Routes](./configure-routes), and we only need to use the `PATCH` method to add the `key-auth` plugin to the route.
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9180/apisix/admin/routes/getting-started-ip" -X PATCH -d '
 {
   "plugins": {
@@ -91,7 +92,7 @@ Here are three kinds of validation:
 
 Send a request without the `apikey` header.
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9080/ip"
 ```
 
@@ -110,7 +111,7 @@ Server: APISIX/3.1.0
 
 Send a request with a wrong key (e.g., `wrong-key`) in the `apikey` header.
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9080/ip" -H 'apikey: wrong-key'
 ```
 
@@ -129,7 +130,7 @@ Server: APISIX/3.1.0
 
 Send a request with the correct key (`secret-key`) in the `apikey` header.
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9080/ip" -H 'apikey: secret-key'
 ```
 
@@ -150,7 +151,7 @@ Server: APISIX/3.1.0
 
 Disable the authentication by setting the `_meta.disable` parameter to `true`.
 
-```sh
+```shell
 curl "http://127.0.0.1:9180/apisix/admin/routes/getting-started-ip" -X PATCH -d '
 {
   "plugins": {
@@ -165,7 +166,7 @@ curl "http://127.0.0.1:9180/apisix/admin/routes/getting-started-ip" -X PATCH -d 
 
 And then, you can send an unauthenticated request (e.g., without the `apikey` header) to validate if the authentication was disabled.
 
-```sh
+```shell
 curl -i "http://127.0.0.1:9080/ip"
 ```
 
