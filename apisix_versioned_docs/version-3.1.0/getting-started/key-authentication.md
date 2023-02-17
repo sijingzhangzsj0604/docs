@@ -3,11 +3,11 @@ title: Key Authentication
 slug: /getting-started/key-authentication
 ---
 
-API gateway's primary role is to connect API consumers and providers, for security reasons, it should authenticate, identity, and constrain on the consumers, such as access restriction, blocking, etc.
+An API gateway's primary role is to connect API consumers and providers. For security reasons, it should authenticate and authorize consumers before access to internal resources.
 
 ![Key Authentication](https://static.apiseven.com/uploads/2023/02/08/8mRaK3v1_consumer.png)
 
-APISIX provides flexible plugin extension capabilities and rich plugins for user authentication and authorization, for example:
+APISIX has a flexible plugin extension system and a number of existing plugins for user authentication and authorization. For example:
 
 - [Key Authentication](https://apisix.apache.org/docs/apisix/plugins/key-auth/)
 - [Basic Authentication](https://apisix.apache.org/docs/apisix/plugins/basic-auth/)
@@ -23,20 +23,19 @@ APISIX provides flexible plugin extension capabilities and rich plugins for user
 - [Open Policy Agent (OPA)](https://apisix.apache.org/docs/apisix/plugins/opa/)
 - [Forward Authentication](https://apisix.apache.org/docs/apisix/plugins/forward-auth/)
 
-In this tutorial, you will create one _Consumer_ with _Key Authentication_, and learn how to enable and disable key authentication.
+In this tutorial, you will create a _Consumer_ with _Key Authentication_, and learn how to enable and disable key authentication.
 
 ## What is a Consumer
 
 A Consumer is an application or a developer who consumes the API.
 
-One Consumer should have unique _username_ and the corresponding authentication _plugins_ mentioned above at least.
+In APISIX, a Consumer requires a unique _username_ and an authentication _plugin_ from the list above to be created. 
 
-## What is the Key Authentication
+## What is Key Authentication
 
-Key authentication is a relatively simple but widely used authentication approach.
-
+Key authentication is a relatively simple but widely used authentication approach. The idea is as follows: 
 1. Administrator adds an authentication key (API key) to the Route. 
-2. API consumers add the key to the query string or headers to authenticate their requests.
+2. API consumers add the key to the query string or headers for authentication when sending requests.
 
 ## Enable Key Authentication
 
@@ -47,7 +46,7 @@ Key authentication is a relatively simple but widely used authentication approac
 
 ### Create a Consumer
 
-Let's create a consumer named `tom`, and enable the `key-auth` plugin with the key `secret-key`, which means all requests with the key `secret-key` are considered from `tom`.
+Let's create a consumer named `tom` and enable the `key-auth` plugin with an API key `secret-key`. All requests sent with the key `secret-key` should be authenticated as `tom`.
 
 :::caution
 
@@ -71,7 +70,7 @@ You will receive an `HTTP/1.1 200 OK` response if the consumer was created succe
 
 ### Enable Authentication
 
-The following route inherits from [Configure Routes](./configure-routes), and we only need to use the `PATCH` method to add the `key-auth` plugin to the route.
+Inheriting the route `getting-started-ip` from [Configure Routes](./configure-routes), we only need to use the `PATCH` method to add the `key-auth` plugin to the route:
 
 ```shell
 curl -i "http://127.0.0.1:9180/apisix/admin/routes/getting-started-ip" -X PATCH -d '
@@ -86,9 +85,9 @@ You will receive an `HTTP/1.1 201 Created` response if the plugin was added succ
 
 ### Validate
 
-Here are three kinds of validation:
+Let's validate the authentication in the following scenarios:
 
-#### 1. Send a request without key
+#### 1. Send a request without any key
 
 Send a request without the `apikey` header.
 
@@ -109,13 +108,13 @@ Server: APISIX/3.1.0
 
 #### 2. Send a request with a wrong key
 
-Send a request with a wrong key (e.g., `wrong-key`) in the `apikey` header.
+Send a request with a wrong key (e.g. `wrong-key`) in the `apikey` header.
 
 ```shell
 curl -i "http://127.0.0.1:9080/ip" -H 'apikey: wrong-key'
 ```
 
-Since the key is not equal to `secret-key`, you will receive an unauthorized response with `HTTP/1.1 401 Unauthorized`.
+Since the key is incorrect, you will receive an unauthorized response with `HTTP/1.1 401 Unauthorized`.
 
 ```text
 HTTP/1.1 401 Unauthorized
@@ -149,7 +148,7 @@ Server: APISIX/3.1.0
 
 ### Disable Authentication
 
-Disable the authentication by setting the `_meta.disable` parameter to `true`.
+Disable the key authentication plugin by setting the `_meta.disable` parameter to `true`.
 
 ```shell
 curl "http://127.0.0.1:9180/apisix/admin/routes/getting-started-ip" -X PATCH -d '
@@ -164,14 +163,14 @@ curl "http://127.0.0.1:9180/apisix/admin/routes/getting-started-ip" -X PATCH -d 
 }'
 ```
 
-And then, you can send an unauthenticated request (e.g., without the `apikey` header) to validate if the authentication was disabled.
+You can send a request without any key to validate:
 
 ```shell
 curl -i "http://127.0.0.1:9080/ip"
 ```
 
-Because you have disabled the key authentication, you will receive an `HTTP/1.1 200 OK` response.
+Because you have disabled the key authentication plugin, you will receive an `HTTP/1.1 200 OK` response.
 
 ## What's Next
 
-You have learned how to configure authentication for a specific route. In the next tutorial, you will learn how to configure the rate limiting.
+You have learned how to configure key authentication for a route. In the next tutorial, you will learn how to configure rate limiting.
