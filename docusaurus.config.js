@@ -117,6 +117,20 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'apisix-ingress-controller',
+        path: 'docs/apisix-ingress-controller',
+        routeBasePath: '/apisix-ingress-controller',
+        sidebarPath: require.resolve('./docs/apisix-ingress-controller/sidebars.js'),
+        editUrl: (props) =>
+          getEditUrl({
+            ...props,
+            projectName: 'apisix-ingress-controller_versioned_docs',
+          }),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'apisix',
         path: 'docs/apisix',
         routeBasePath: '/apisix',
@@ -141,6 +155,9 @@ const config = {
           }, {
             from: "/apisix",
             to: "/apisix/documentation",
+          }, {
+            from: "/apisix-ingress-controller",
+            to: "/apisix-ingress-controller/demo",
           }
         ]
       }
