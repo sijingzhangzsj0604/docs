@@ -11,3 +11,7 @@ $ npm run start
 
 $ npm run build
 ```
+
+### How to add new project?
+
+Refer to https://github.com/api7/docs/pull/45
