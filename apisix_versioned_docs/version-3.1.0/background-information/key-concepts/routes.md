@@ -1,6 +1,6 @@
 ---
 title: Routes
-slug: /background-information/key-concepts/routes
+slug: /key-concepts/routes
 ---
 
 In this document, you will learn the basic concept of _routes_ in APISIX, different routing options APISIX offers, as well as drawbacks and solutions to repetitive route configurations. Explore additional resources at the end of the document for more information on related topics. 
