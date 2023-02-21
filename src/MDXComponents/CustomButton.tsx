@@ -12,7 +12,7 @@ type ButtonProps = {
 const CustomButton: React.FC<ButtonProps> = ({ text, link, isDisabled = false }) => {
   return (
     <Link href={link} style={{ textDecorationColor: '#ffffff' }}>
-      <Tooltip isDisabled={!isDisabled} borderRadius='0.375rem' hasArrow label='Comming Soon' placement='bottom' bg='#3166DD'>
+      <Tooltip isDisabled={!isDisabled} borderRadius='0.375rem' hasArrow label='Coming Soon' placement='bottom' bg='#3166DD'>
         <Button
           py='5px'
           px='10px'

@@ -15,6 +15,36 @@
         "getting-started/key-authentication",
         "getting-started/rate-limiting"
       ]
+    },
+    {
+      "type": "category",
+      "label": "Background Information",
+      "items": [
+        {
+          "type": "category",
+          "label": "Key Concepts",
+          "items": [
+            "background-information/key-concepts/routes",
+            "background-information/key-concepts/upstreams",
+            "background-information/key-concepts/services",
+            [
+              {
+                "type": "category",
+                "label": "Plugins",
+                "items": [
+                  "background-information/key-concepts/plugins/dynamic-plugin-ordering"
+                ]
+              }
+            ],
+            "background-information/key-concepts/consumers",
+            "background-information/key-concepts/consumer-groups",
+            "background-information/key-concepts/ssl-certificates",
+            "background-information/key-concepts/secrets"
+          ]
+        },
+        "background-information/glossary",
+        "background-information/how-apisix-works"
+      ]
     }
   ]
 }

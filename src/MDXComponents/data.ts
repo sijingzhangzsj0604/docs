@@ -17,6 +17,7 @@ const APISIX_DOCUMENTATION_DATA = [
     highlight: 'Explanation.',
     text: 'Explanation. Clarification of key concepts and how APISIX works.',
     button: 'Background',
+    link: '/apisix/key-concepts/routes',
   },
   {
     title: 'Reference',
