@@ -10,7 +10,7 @@ In this document, you will learn the basic concept of _routes_ in APISIX, differ
 
 Routes define paths to upstream services. In APISIX, routes are responsible for matching client requests based on configured rules, loading & executing the corresponding plugins, as well as forwarding requests to the specified upstream endpoints.
 
-The diagram below shows an example of users sending two HTTP requests to the APISIX API gateway, which are forwarded accordingly per the configured rules in routes: 
+In APISIX, a simple route can be set up with a path-matching URI and a corresponding upstream address. The diagram below shows an example of users sending two HTTP requests to the APISIX API gateway, which are forwarded accordingly per the configured rules in routes: 
 
 <br />
 
@@ -19,10 +19,6 @@ The diagram below shows an example of users sending two HTTP requests to the API
 </div>
 
 <br /><br />
-
-In APISIX, a route has two required parameters: 
-* an URI (or a list of URIs), and;
-* an upstream target
 
 Routes are often configured with plugins as well. For example, [configuring the rate-limit plugin in a route](../../getting-started/rate-limiting.md) will enable rate-limiting effects. 
 

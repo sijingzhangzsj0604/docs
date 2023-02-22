@@ -7,7 +7,11 @@ APISIX is a unified control point, managing the ingress and egress of APIs and m
 
 APISIX offers rate limiting capabilities to protect APIs and microservices by limiting the number of requests sent to upstream services in a given period of time. The count of requests is done efficiently in memory with low latency and high performance.
 
-![Rate Limiting](https://static.apiseven.com/uploads/2023/02/20/l9G9Kq41_rate-limiting.png)
+<br />
+<div style={{textAlign: 'center'}}>
+<img src="https://static.apiseven.com/uploads/2023/02/20/l9G9Kq41_rate-limiting.png" alt="Routes Diagram" />
+</div>
+<br />
 
 In this tutorial, you will enable the `limit-count` plugin to set a rate limiting constraint on the incoming traffic.
 

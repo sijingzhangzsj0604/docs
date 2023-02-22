@@ -3,26 +3,26 @@ title: Configure Routes
 slug: /getting-started/configure-routes
 ---
 
-Apache APISIX provides flexible gateway management capabilities based on _Routes_, where routing paths and targets are defined for requests. 
+Apache APISIX provides flexible gateway management capabilities based on _routes_, where routing paths and targets are defined for requests. 
 
 This tutorial guides you on how to create a route and validate it. You will complete the following steps:
 
 1. Create a route with a sample _upstream_ that points to [httpbin.org](http://httpbin.org).
 2. Use _cURL_ to send a test request to see how APISIX proxies and forwards the request.
 
-## Prerequisite(s)
-
-1. Complete [Get APISIX](./) to install APISIX.
-
 ## What is a Route
 
 A route is a routing path to upstream targets. In [Apache APISIX](https://api7.ai/apisix), routes are responsible for matching client's requests based on defined rules, loading and executing the corresponding plugins, as well as forwarding requests to the specified upstream services.
 
-A route should have an _uri_ and a corresponding upstream at the minimum.
+In APISIX, a simple route can be set up with a path-matching URI and a corresponding upstream address.
 
 ## What is an Upstream
 
 An upstream is a set of target nodes with the same work. It defines a virtual host abstraction that performs load balancing on a given set of service nodes according to the configured rules.
+
+## Prerequisite(s)
+
+1. Complete [Get APISIX](./) to install APISIX.
 
 ## Create a Route
 
@@ -46,7 +46,7 @@ curl -i "http://127.0.0.1:9180/apisix/admin/routes" -X PUT -d '
 }'
 ```
 
-You will receive an `HTTP/1.1 200 OK` response if the route was created successfully.
+You will receive an `HTTP/1.1 201 OK` response if the route was created successfully.
 
 ## Validate
 
