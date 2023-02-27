@@ -15,7 +15,7 @@ In APISIX, a simple route can be set up with a path-matching URI and a correspon
 <br />
 
 <div style={{textAlign: 'center'}}>
-<img src="https://static.apiseven.com/uploads/2023/02/21/uT2dcAzz_routes-diagram.png" alt="Routes Diagram" width="90%" />
+<img src="https://static.apiseven.com/uploads/2023/02/24/1yJwf7in_routes.svg" alt="Routes Diagram" width="90%" />
 </div>
 
 <br /><br />
