@@ -3,7 +3,9 @@ title: Routes
 slug: /key-concepts/routes
 ---
 
-In this document, you will learn the basic concept of _routes_ in APISIX, different routing options APISIX offers, as well as drawbacks and solutions to repetitive route configurations. Explore additional resources at the end of the document for more information on related topics. 
+In this document, you will learn the basic concept of _routes_ in APISIX, different routing options APISIX offers, as well as drawbacks and solutions to repetitive route configurations. 
+
+Explore additional resources at the end of the document for more information on related topics. 
 
 
 ## Overview
@@ -42,7 +44,7 @@ While routes are essential in defining the paths of traffic flows, there are dra
 To address this issue, [Upstreams](./upstreams.md) and [Services](./services.md) were designed to abstract away repetitive information and reduce redundancies, following the [DRY principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). 
 
 ## Additional Resource(s)
-* Quickstart tutorial - [Configure Routes](../../getting-started/configure-routes.md)
+* Getting Started - [Configure Routes](../../getting-started/configure-routes.md)
 [//]: <TODO: Configure Routes via APISIX Admin API>
 [//]: <TODO: Configure Routes via APISIX Dashbaord>
 [//]: <TODO: Configure Routes in Configuration File>

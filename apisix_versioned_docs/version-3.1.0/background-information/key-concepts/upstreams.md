@@ -3,7 +3,9 @@ title: Upstreams
 slug: /key-concepts/upstreams
 ---
 
-In this document, you will learn the basic concept of an _upstream_ object in APISIX and why you would want to use it. You will be introduced to a few relevant features, including load balancing, service discovery, and upstream health checking. Additional resources can be found at the end for further exploration.
+In this document, you will learn the basic concept of an _upstream_ object in APISIX and why you would want to use it. You will be introduced to a few relevant features, including load balancing, service discovery, and upstream health checking. 
+
+Explore additional resources at the end for more information on related topics. 
 
 
 ## Overview
@@ -80,7 +82,7 @@ More details about how to configure upstream health checking will be provided in
 [//]: <TODO: How-To Guide - Health Checking>
 
 ## Additional Resource(s)
-* Quickstart tutorial - [Configure Load Balancing](../../getting-started/load-balancing.md)
+* Getting Started - [Load Balancing](../../getting-started/load-balancing.md)
 [//]: <TODO: Configure Upstreams via APISIX Admin API>
 [//]: <TODO: Configure Upstreams via APISIX Dashbaord>
 [//]: <TODO: Upstream Health Checks>
