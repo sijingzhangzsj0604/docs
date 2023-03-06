@@ -31,7 +31,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.1",
     "react-icons": "^4.7.1",
-    "redocusaurus": "^1.6.0"
+    "redocusaurus": "^1.6.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.3.1",
