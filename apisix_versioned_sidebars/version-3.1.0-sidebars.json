@@ -37,6 +37,19 @@
         "background-information/glossary",
         "background-information/how-apisix-works"
       ]
+    },
+    {
+      "type": "category",
+      "label": "How-To Guide",
+      "items": [
+        {
+          "type": "category",
+          "label": "Observability",
+          "items": [
+            "how-to-guide/observability/metrics-with-prometheus"
+          ]
+        }
+      ]
     }
   ]
 }
