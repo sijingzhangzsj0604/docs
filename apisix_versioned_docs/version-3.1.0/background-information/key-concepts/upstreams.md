@@ -3,14 +3,14 @@ title: Upstreams
 slug: /key-concepts/upstreams
 ---
 
-In this document, you will learn the basic concept of an _upstream_ object in APISIX and why you would want to use it. You will be introduced to a few relevant features, including load balancing, service discovery, and upstream health checking. 
+In this document, you will learn the basic concept of an upstream object in APISIX and why you would want to use it. You will be introduced to a few relevant features, including load balancing, service discovery, and upstream health checking. 
 
 Explore additional resources at the end for more information on related topics. 
 
 
 ## Overview
 
-An upstream object in APISIX is a logical abstraction of a set containing one or more upstream addresses. It is required in [routes](../key-concepts/routes.md) or [services](../key-concepts/services.md) to specify **where** requests flow to and **how** they are distributed. 
+An _upstream_ object in APISIX is a logical abstraction of a set containing one or more upstream addresses. It is required in [routes](../key-concepts/routes.md) or [services](../key-concepts/services.md) to specify **where** requests flow to and **how** they are distributed. 
 
 There are different ways to configure upstream addresses, one of which is to explicitly configure them in every route/service. Here is an example of such a configuration in routes, where the same upstream address is repeated across three different routes: 
 

@@ -3,14 +3,14 @@ title: Routes
 slug: /key-concepts/routes
 ---
 
-In this document, you will learn the basic concept of _routes_ in APISIX, different routing options APISIX offers, as well as drawbacks and solutions to repetitive route configurations. 
+In this document, you will learn the basic concept of routes in APISIX, different routing options APISIX offers, as well as drawbacks and solutions to repetitive route configurations. 
 
 Explore additional resources at the end of the document for more information on related topics. 
 
 
 ## Overview
 
-Routes define paths to upstream services. In APISIX, routes are responsible for matching client requests based on configured rules, loading & executing the corresponding plugins, as well as forwarding requests to the specified upstream endpoints.
+_Routes_ define paths to upstream services. In APISIX, routes are responsible for matching client requests based on configured rules, loading & executing the corresponding plugins, as well as forwarding requests to the specified upstream endpoints.
 
 In APISIX, a simple route can be set up with a path-matching URI and a corresponding upstream address. The diagram below shows an example of users sending two HTTP requests to the APISIX API gateway, which are forwarded accordingly per the configured rules in routes: 
 

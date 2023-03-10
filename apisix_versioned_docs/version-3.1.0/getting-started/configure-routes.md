@@ -3,7 +3,7 @@ title: Configure Routes
 slug: /getting-started/configure-routes
 ---
 
-Apache APISIX provides flexible gateway management capabilities based on _routes_, where routing paths and targets are defined for requests. 
+Apache APISIX provides flexible gateway management capabilities based on routes, where routing paths and targets are defined for requests. 
 
 This tutorial guides you on how to create a route and validate it. You will complete the following steps:
 
@@ -12,13 +12,13 @@ This tutorial guides you on how to create a route and validate it. You will comp
 
 ## What is a Route
 
-A route is a routing path to upstream targets. In [Apache APISIX](https://api7.ai/apisix), routes are responsible for matching client's requests based on defined rules, loading and executing the corresponding plugins, as well as forwarding requests to the specified upstream services.
+A _route_ is a routing path to upstream targets. In [Apache APISIX](https://api7.ai/apisix), routes are responsible for matching client's requests based on defined rules, loading and executing the corresponding plugins, as well as forwarding requests to the specified upstream services.
 
 In APISIX, a simple route can be set up with a path-matching URI and a corresponding upstream address.
 
 ## What is an Upstream
 
-An upstream is a set of target nodes with the same work. It defines a virtual host abstraction that performs load balancing on a given set of service nodes according to the configured rules.
+An _upstream_ is a set of target nodes with the same work. It defines a virtual host abstraction that performs load balancing on a given set of service nodes according to the configured rules.
 
 ## Prerequisite(s)
 

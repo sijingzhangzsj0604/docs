@@ -9,7 +9,7 @@ Explore additional resources at the end for more information on related topics.
 
 ## Overview
 
-A service object in APISIX is an abstraction of a backend application providing logically related functionalities. The relationship between a service and routes is usually one-to-many (1:N). 
+A _service_ object in APISIX is an abstraction of a backend application providing logically related functionalities. The relationship between a service and routes is usually one-to-many (1:N). 
 
 The following diagram illustrates an example of a service object used in architecting a data analytics (`da`) backend at Foodbar Company (a fictional company), where there are two routes with distinctive configurations - one for getting data ([HTTP GET](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)) and the other one for uploading data ([HTTP POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)): 
 
