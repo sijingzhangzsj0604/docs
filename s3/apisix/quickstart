@@ -21,15 +21,16 @@ DEFAULT_ETCD_IMAGE_NAME="bitnami/etcd"
 DEFAULT_ETCD_IMAGE_TAG="3.5.4"
 
 DEFAULT_APISIX_IMAGE_NAME="apache/apisix"
-DEFAULT_APISIX_IMAGE_TAG="3.1.0-debian"
+DEFAULT_APISIX_IMAGE_TAG="3.2.0-debian"
 
-DEFAULT_ETCD_LISTEN_HOST=127.0.0.1
+DEFAULT_ETCD_LISTEN_HOST=0.0.0.0
 DEFAULT_ETCD_LISTEN_PORT=2379
 
 DEFAULT_APISIX_PORT=9180
 
-DEFAULT_ETCD_NAME="etcd"
+DEFAULT_ETCD_NAME="etcd-quickstart"
 DEFAULT_APP_NAME="apisix-quickstart"
+DEFAULT_NET_NAME="apisix-quickstart-net"
 
 usage() {
   echo "Runs a Docker based Apache APISIX."
@@ -64,32 +65,47 @@ ensure_curl() {
 }
 
 install_apisix() {
+  echo Creating bridge network $DEFAULT_NET_NAME
+
+  docker network create -d bridge $DEFAULT_NET_NAME && echo_pass "network ${DEFAULT_NET_NAME} created" || {
+          echo_fail "create network failed"
+    return 1
+  }
+
+  echo ""
+
   echo Starting the container $DEFAULT_ETCD_NAME
   docker run -d \
     --name ${DEFAULT_ETCD_NAME} \
-    --network="host" \
+    --network=$DEFAULT_NET_NAME \
     -e ALLOW_NONE_AUTHENTICATION=yes \
     -e ETCD_ADVERTISE_CLIENT_URLS=http://${DEFAULT_ETCD_LISTEN_HOST}:${DEFAULT_ETCD_LISTEN_PORT} \
-    ${DEFAULT_ETCD_IMAGE_NAME}:${DEFAULT_ETCD_IMAGE_TAG} && echo_pass "etcd is listening on ${DEFAULT_ETCD_LISTEN_HOST}:${DEFAULT_ETCD_LISTEN_PORT}" || {
+    ${DEFAULT_ETCD_IMAGE_NAME}:${DEFAULT_ETCD_IMAGE_TAG} && echo_pass "etcd is listening on ${DEFAULT_ETCD_NAME}:${DEFAULT_ETCD_LISTEN_PORT}" || {
           echo_fail "start etcd failed"
     return 1
   }
   
   echo ""
-  
+
+  APISIX_DEPLOYMENT_ETCD_HOST="[\"http://${DEFAULT_ETCD_NAME}:${DEFAULT_ETCD_LISTEN_PORT}\"]"
+
   echo Starting the container $DEFAULT_APP_NAME
   docker run -d \
     --name ${DEFAULT_APP_NAME} \
-    --network="host" \
+    --network=$DEFAULT_NET_NAME \
+    -p9080:9080 -p9180:9180 -p9443:9443 -p9090:9090 \
+    -e APISIX_DEPLOYMENT_ETCD_HOST=${APISIX_DEPLOYMENT_ETCD_HOST} \
     ${DEFAULT_APISIX_IMAGE_NAME}:${DEFAULT_APISIX_IMAGE_TAG} && validate_apisix && sleep 2
 
+  # TODO: waiting for enhanced dev mode of APISIX to make admin_key empty in getting-started.
   docker exec ${DEFAULT_APP_NAME} /bin/bash -c "echo '
 deployment:
   role: traditional
   role_traditional:
     config_provider: etcd
   admin:
-    admin_key:
+    allow_admin:
+      - 0.0.0.0/0
   ' > /usr/local/apisix/conf/config.yaml"
   docker exec ${DEFAULT_APP_NAME} apisix reload >> /dev/null 2>&1
 
@@ -100,6 +116,7 @@ destroy_apisix() {
   echo Destroying previous $DEFAULT_APP_NAME containers
   docker rm -f $DEFAULT_APP_NAME >> /dev/null 2>&1
   docker rm -f $DEFAULT_ETCD_NAME >> /dev/null 2>&1
+  docker network rm -f $DEFAULT_NET_NAME >> /dev/null 2>&1
 }
 
 validate_apisix() {
