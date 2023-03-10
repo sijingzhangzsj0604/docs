@@ -97,7 +97,6 @@ install_apisix() {
     -e APISIX_DEPLOYMENT_ETCD_HOST=${APISIX_DEPLOYMENT_ETCD_HOST} \
     ${DEFAULT_APISIX_IMAGE_NAME}:${DEFAULT_APISIX_IMAGE_TAG} && validate_apisix && sleep 2
 
-  # TODO: waiting for enhanced dev mode of APISIX to make admin_key empty in getting-started.
   docker exec ${DEFAULT_APP_NAME} /bin/bash -c "echo '
 deployment:
   role: traditional
@@ -106,6 +105,8 @@ deployment:
   admin:
     allow_admin:
       - 0.0.0.0/0
+      - 127.0.0.0/24
+    admin_key:
   ' > /usr/local/apisix/conf/config.yaml"
   docker exec ${DEFAULT_APP_NAME} apisix reload >> /dev/null 2>&1
 
