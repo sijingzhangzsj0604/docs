@@ -11,7 +11,7 @@ This guide will show you how to enable the mTLS to protect your [Applications](.
 
 :::important
 
-Please read [What is Certificate](../../concepts/certificate.md) before you go ahead.
+Please read [What is SSL](../../concepts/ssl.md) before you go ahead.
 
 :::
 
@@ -39,13 +39,11 @@ openssl x509 -req -days 3650 -set_serial 01 -in client.req -out client.crt -CA c
 
 You can skip the above steps if you already have these certificates.
 
-Create Certificate
-------------------
+Create SSL Object
+-----------------
 
-Follow the tips in [Enable Mutual TLS](../../concepts/certificate.md#enable-mutual-tls) and upload the server certificate, private key, CA certificate, API7 Cloud
-creates a Certificate object.
-
-![Certificate Entry with mTLS](https://static.apiseven.com/2022/12/30/cert-entry-mtls.png)
+Follow the tips in [How to Create SSL Object](../../concepts/ssl.md#how-to-create-ssl-object) and upload the server certificate, private key, CA certificate, API7 Cloud
+creates an SSL object.
 
 Create Application and API
 --------------------------

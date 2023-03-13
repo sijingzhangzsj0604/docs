@@ -180,4 +180,4 @@ What's Next
 
 * Learn about [API](./api.md)
 * Learn about [Plugin](./plugin.md)
-* Learn about [Certificate](./certificate.md)
+* Learn about [SSL](./ssl.md)

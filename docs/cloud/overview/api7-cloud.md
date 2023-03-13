@@ -41,5 +41,5 @@ What's Next
   * [What is Application](../concepts/application.md)
   * [What is API](../concepts/api.md)
   * [What is Consumer](../concepts/consumer.md)
-  * [What is Certificate](../concepts/certificate.md)
+  * [What is SSL](../concepts/ssl.md)
   * [What is Plugin](../concepts/plugin.md)

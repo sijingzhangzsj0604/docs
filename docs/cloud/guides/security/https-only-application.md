@@ -7,11 +7,11 @@ show_feedback: true
 Sometimes you don't want your clients to access the [Application](../../concepts/application.md) over HTTP.
 Since some security considerations, in such a case, you may want to build an HTTPS-only Application on API7 Cloud.
 
-Configure Certificate
-----------------------
+Configure SSL Object
+--------------------
 
-Please refer to the [How to Upload a Certificate](../../concepts/certificate.md#how-to-upload-a-certificate) section to
-configure a certificate.
+Follow the tips in [How to Create SSL Object](../../concepts/ssl.md#how-to-create-ssl-object) and upload the server certificate, private key, CA certificate, API7 Cloud
+creates an SSL object.
 
 :::tip
 

@@ -13,7 +13,7 @@ This guide will show you how to configure mTLS between Apache APISIX and your ba
 
 :::important
 
-Please read [What is Certificate](../../concepts/certificate.md) before you go ahead.
+Please read [What is SSL](../../concepts/ssl.md) before you go ahead.
 
 :::
 
@@ -52,10 +52,10 @@ openssl x509 -req -days 3650 -set_serial 01 -in client.req -out client.crt -CA c
 
 You can skip the above steps if you already have these certificates.
 
-### Create Certificate
+### Create SSL Object
 
-Follow the tips in [How to Upload Certificate](../../concepts/certificate.md#how-to-update-a-certificate).
-Note here that we need to upload the client certificate and private key, as Apache APISIX will use this Certificate object to communicate with the backend service.
+Follow the tips in [How to Create SSL Object](../../concepts/ssl.md#how-to-create-ssl-object) and upload the server certificate, private key, CA certificate, API7 Cloud
+creates an SSL object.
 
 ### Deploy Backend Service
 
@@ -106,7 +106,7 @@ We'll create an Application with the following details in this guide.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `umtls.httpbin.org`.
 4. Set the upstream URL to the IP address of Nginx container (in our case, it's `http://172.17.0.4`). Please use the below command to get the correct IP address in your run.
-5. We enable the upstream mutual TLS and fill in the Certificate ID.
+5. We enable the upstream mutual TLS and fill in the SSL object ID.
 
 :::tip
 You can run the command below to fetch the container address of the nginx services.
@@ -122,7 +122,7 @@ docker inspect mtls-upstream-server --format '{{ .NetworkSettings.Networks.bridg
 When you create the Application or when you add a new Upstream version:
 
 2. Click on the **View Hide Advanced Upstream Options** to unfold advanced upstream options.
-3. Select the **Mutual TLS** checkbox, and an API7 Cloud will show an input box to fill in the Certificate ID
+3. Select the **Mutual TLS** checkbox, and an API7 Cloud will show an input box to fill in the SSL object ID
 
 ![How to Enable Upstream mTLS](https://static.apiseven.com/2022/12/30/how-to-enable-upstream-mtls.png)
 :::

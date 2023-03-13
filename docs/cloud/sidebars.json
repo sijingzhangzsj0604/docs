@@ -113,7 +113,7 @@
         "concepts/application",
         "concepts/api",
         "concepts/consumer",
-        "concepts/certificate",
+        "concepts/ssl",
         "concepts/plugin"
       ]
     },
