@@ -36,11 +36,11 @@ docker inspect <Apache APISIX Container Name/ID> -f '{{ .NetworkSettings.Network
 
 :::
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `websocket`.
+1. The Service name is `websocket`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `websocket.local`.
 4. Set the upstream URL to the IP address of WebSocket server container (in our case, it's `http://172.17.0.5:8080`). Please use the below command to get the correct IP address in your run.
@@ -54,7 +54,7 @@ docker inspect websocket -f '{{ .NetworkSettings.Networks.bridge.IPAddress }}'
 
 :::
 
-Besides, we'll create an API inside the `websocket` Application.
+Besides, we'll create an API inside the `websocket` Service.
 
 1. The API name is `mirror`.
 2. The path is `/ws` (exact match).
@@ -69,7 +69,7 @@ the API type, and without actual impacts for this API, it's your liberty to deci
 
 :::note
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started) guides first
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first
 
 :::
 

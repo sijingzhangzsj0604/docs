@@ -8,7 +8,7 @@ Fault injection is a testing technique for detecting how your platform will beha
 some components don't run in the usual way.
 
 API7 Cloud allows users to configure the Fault Injection plugin to inject some errors for
-their [Applications](../../concepts/application.md) or [APIs](../../concepts/api.md) so that
+their [Service](../../concepts/service.md) or [APIs](../../concepts/api.md) so that
 they can simulate the API Gateway faults.
 
 The Fault Injection plugin has two run modes: `Abort Request` and `Delay Request`. When it works in
@@ -16,17 +16,17 @@ The Fault Injection plugin has two run modes: `Abort Request` and `Delay Request
 will set the given status code and response body; when the run mode is `Delay Request`, Apache APISIX
 will delay the request for the given period and forward the request normally.
 
-Create Application and API
---------------------------
+Create Service and API
+----------------------
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-* The Application name is `fault-injection-app`.
+* The Service name is `fault-injection-app`.
 * The path prefix is `/v1`.
 * The HTTP Host is `fault-injection.httpbin.org`.
 * The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `fault-injection-app` Application.
+Besides, we'll create an API inside the `fault-injection-app` Service.
 
 * The API name is `json`.
 * The path is `/json` (exact match).
@@ -34,14 +34,14 @@ Besides, we'll create an API inside the `fault-injection-app` Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started) guides first.
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first.
 
 :::
 
 Test the Abort Request Mode
 ---------------------------
 
-Now let's add the Fault Injection plugin to the `fault-injection-app` Application.
+Now let's add the Fault Injection plugin to the `fault-injection-app` Service.
 You can enter the `fault-injection-app` details page, click on the **Add Plugin** button,
 select Fault Injection plugin, and fill out the form.
 
@@ -89,7 +89,7 @@ the sample, the more accurate the results.
 Test the Delay Request Mode
 ---------------------------
 
-Let's update the Fault Injection plugin on the `fault-injection-app` Application.
+Let's update the Fault Injection plugin on the `fault-injection-app` Service.
 
 ![Update Fault Injection Plugin](https://static.apiseven.com/2022/12/30/update-fault-injection-plugin.png)
 

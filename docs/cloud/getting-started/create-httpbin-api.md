@@ -1,16 +1,16 @@
 ---
-title: Create API for HTTPBIN Application
+title: Create API for HTTPBIN Service
 reading_time: auto
 show_feedback: true
 ---
 
-Now we have created the HTTPBIN Application successfully, specifying the upstream URL. But we don't have any API endpoints.
+Now we have created the HTTPBIN Service successfully, specifying the upstream URL. But we don't have any API endpoints.
 
 In this section, we'll create an API endpoint that returns a JSON string from https://httpbin.org.
 
-Enter the HTTPBIN Application detail page, and click on the **Create API** button.
+Enter the HTTPBIN Service detail page, and click on the **Create API** button.
 
-![http app detail](https://static.apiseven.com/2022/12/30/httpbin-app-detail.png)
+![http svc detail](https://static.apiseven.com/2022/12/30/httpbin-app-detail.png)
 
 API7 Cloud will open a popup window, filling in the API details.
 

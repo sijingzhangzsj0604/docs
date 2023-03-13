@@ -97,12 +97,12 @@ docker inspect <Apache APISIX Container Name/ID> -f '{{ .NetworkSettings.Network
 
 :::
 
-Create Application
-------------------
+Create Service
+--------------
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `upstream-mtls-app`.
+1. The Service name is `upstream-mtls-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `umtls.httpbin.org`.
 4. Set the upstream URL to the IP address of Nginx container (in our case, it's `http://172.17.0.4`). Please use the below command to get the correct IP address in your run.
@@ -119,7 +119,7 @@ docker inspect mtls-upstream-server --format '{{ .NetworkSettings.Networks.bridg
 
 :::tip How to enable the upstream mutual TLS?
 
-When you create the Application or when you add a new Upstream version:
+When you create the Service or when you add a new Upstream version:
 
 2. Click on the **View Hide Advanced Upstream Options** to unfold advanced upstream options.
 3. Select the **Mutual TLS** checkbox, and an API7 Cloud will show an input box to fill in the SSL object ID
@@ -127,7 +127,7 @@ When you create the Application or when you add a new Upstream version:
 ![How to Enable Upstream mTLS](https://static.apiseven.com/2022/12/30/how-to-enable-upstream-mtls.png)
 :::
 
-Besides, we'll create an API inside the mtls-auth-app Application.
+Besides, we'll create an API inside the mtls-auth-app Service.
 
 * The API name is `anything`.
 * The path is `/anything` (exact match).
@@ -135,7 +135,7 @@ Besides, we'll create an API inside the mtls-auth-app Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started)
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started)
 guides first
 
 :::

@@ -4,7 +4,7 @@ reading_time: auto
 show_feedback: true
 ---
 
-You may want to protect your [APIs](../../../concepts/api.md)  or [Applications](../../../concepts/application.md) by using API authentication.
+You may want to protect your [APIs](../../../concepts/api.md)  or [Service](../../../concepts/service.md) by using API authentication.
 With the authentication requirement, API7 Cloud will only forward API requests with valid authentication credentials. Other requests (without
 credentials or with a wrong one) will be rejected and get a `401 Unauthorized` response.
 
@@ -12,7 +12,7 @@ Hash-based message authentication code (HMAC) is a mechanism for calculating a m
 
 [HMAC (Hash-based message authentication code)](https://en.wikipedia.org/wiki/HMAC) Auth is an API authentication method that can verify clients' identity and check the message's integrity and authenticity.
 
-This guide will use HMAC Auth to protect your APIs on API7 Cloud. You can also safeguard Applications as long as you configure the application's authentication plugin (instead of a specific API).
+This guide will use HMAC Auth to protect your APIs on API7 Cloud. You can also safeguard Service as long as you configure the Service's authentication plugin (instead of a specific API).
 
 :::important
 
@@ -29,16 +29,16 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `hmac-auth-app`.
+1. The Service name is `hmac-auth-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `hmac-auth.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `hmac-auth-app` Application.
+Besides, we'll create an API inside the `hmac-auth-app` Service.
 
 1. The API name is `post`.
 2. The path is `/post` (exact match).
@@ -46,7 +46,7 @@ Besides, we'll create an API inside the `hmac-auth-app` Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../../getting-started) guides first
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../../getting-started) guides first
 
 :::
 

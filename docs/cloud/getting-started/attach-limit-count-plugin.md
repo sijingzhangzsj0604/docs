@@ -4,20 +4,26 @@ reading_time: auto
 show_feedback: true
 ---
 
-So far, you know how to configure Application and API to let your APISIX instance run as your expectation. This section will extend the API with the [Limit Count Plugin](../guides/traffic-management/limit-count.md). Limit Count protects your API from too many requests from being overwhelmed by a large number of requests.
+So far, you know how to configure Service and API to let your APISIX instance run as your expectation. This section will extend the API with the [Limit Count Plugin](../guides/traffic-management/limit-count.md). Limit Count protects your API from too many requests from being overwhelmed by a large number of requests.
 
-![JSON API detail](https://static.apiseven.com/uploads/2023/01/12/1n3Kv5rc_Screenshot%202023-01-12%20at%2010.13.59.png)
+To add the Limit Count plugin for HTTPBIN Service. Do the following:
 
-Enter the JSON API detail page and click on the **Add Plugin** button (wrapped by the black ellipse). API7 Cloud will open a popup window to add a new plugin.
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the HTTPBIN Service name, enter the Service details page.
+4. Click on **Add Plugin**, select the Limit Count plugin.
+5. Fill the form:
+   * Set **Count** to `5`
+   * Set **Period** to `60`.
+   * Set **Rejected Status Code** to `429`.
+   * Set **Error Message** to `{"error_msg":"Too many requests"}`.
 
-![Configure Limit Count Plugin](https://static.apiseven.com/2023/01/03/63b3dec6d86a6.png)
-
-Let's select the Limit Count plugin and fill out the form. In this case, we configure:
+In this case, we configure:
 
 1. A gateway instance only accepts five requests in a minute (for the JSON API);
 2. If the number of requests exceeds the limit, the gateway instance rejects the requests with the `429` status code, and the response body will be "Too many requests".
 
-Save the settings, and now let's try to verify the Limit Count Plugin.
+Now let's try to verify the Limit Count Plugin.
 
 Again, we'll use [curl](https://curl.se/) for the verification. This time we'll send requests continuously.
 

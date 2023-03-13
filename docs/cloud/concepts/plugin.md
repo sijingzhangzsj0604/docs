@@ -11,17 +11,17 @@ By saying handled, it means requests might be:
 2. protected (authentication, authorization, rate-limiting, etc.);
 3. recorded (logging, metrics, etc.);
 
-A plugin can be attached on a specific [Application](./application.md),
+A plugin can be attached on a specific [Service](./service.md),
 [API](./api.md), [Consumer](./consumer.md), or [Cluster](./cluster.md).
 The effective rules of the plugin are as follows:
 
 * Plugins attached to the API only work for this API and will override the same
-ones on the Application (instead of running them twice).
-* Plugins attached to the Application will affect all APIs in this Application.
+ones on the Service (instead of running them twice).
+* Plugins attached to the Service will affect all APIs in this Service.
 * Plugins attached to the Consumer only work for this Consumer and will override the same
-ones on the Application and API (instead of running them twice).
+ones on the Service and API (instead of running them twice).
 * Plugins attached to the Cluster will be effective for all API requests. Care must
-be taken that these plugins won't override the same ones on the Application, API, and Consumer, i.e.
+be taken that these plugins won't override the same ones on the Service, API, and Consumer, i.e.
 same plugins will be run twice (the one on Cluster runs first).
 
 What's Next

@@ -14,13 +14,13 @@ In API7 Cloud, an SSL object is a TLS bundle that contains:
 How API7 Cloud Uses SSL
 -----------------------
 
-In API7 Cloud, [Applications](./application.md) use SSL objects, but the
+In API7 Cloud, [Service](./service.md) use SSL objects, but the
 binding relationship is not explicit. It relies on the [TLS Server Name Indication](
 https://en.wikipedia.org/wiki/Server_Name_Indication) to choose the most matched SSL object.
-So if you want to use an SSL object for an Application, please make sure the Application host
+So if you want to use an SSL object for an Service, please make sure the Service host
 is in the certificate's SAN list.
 
-> Q: What if I have multiple SSL objects for the same Application
+> Q: What if I have multiple SSL objects for the same Service
 > since their SAN lists are interlaced?
 >
 > A: In such a case, it depends on the strategy of the gateway instance (Apache APISIX)
@@ -30,7 +30,7 @@ is in the certificate's SAN list.
 > to learn the details.
 
 :::danger
-If you use HTTPS protocol for an Application but don't configure a corresponding Certificate,
+If you use HTTPS protocol for a Service but don't configure a corresponding Certificate,
 the TLS handshake for API requests will fail.
 :::
 

@@ -18,7 +18,7 @@
       "items": [
         "getting-started/setup-account-login",
         "getting-started/add-gateway-instance",
-        "getting-started/create-httpbin-app",
+        "getting-started/create-httpbin-service",
         "getting-started/create-httpbin-api",
         "getting-started/send-requests-to-verify",
         "getting-started/attach-limit-count-plugin",
@@ -33,7 +33,7 @@
           "type": "category",
           "label": "Security",
           "items": [
-            "guides/security/https-only-application",
+            "guides/security/https-only-service",
             "guides/security/cors",
             "guides/security/enable-mutual-tls",
             "guides/security/ip-restriction",
@@ -110,7 +110,7 @@
       "label": "Concepts",
       "items": [
         "concepts/cluster",
-        "concepts/application",
+        "concepts/service",
         "concepts/api",
         "concepts/consumer",
         "concepts/ssl",

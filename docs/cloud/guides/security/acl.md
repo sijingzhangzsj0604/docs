@@ -6,8 +6,8 @@ show_feedback: true
 
 API7 Cloud utilizes the [Consumer](../../concepts/consumer.md) functionality to provide fine-grained API authentication.
 An API request with valid credentials can be forwarded by the [Apache APISIX](https://apisix.apache.org) normally, no matter which
-[Application](../../concepts/application.md) it accesses. This permissive access control might not be enough when users want to
-control which Consumers can access which Applications or [APIs](../../concepts/api.md). So that requests from unauthorized Consumers
+[Service](../../concepts/service.md) it accesses. This permissive access control might not be enough when users want to
+control which Consumers can access which Service or [APIs](../../concepts/api.md). So that requests from unauthorized Consumers
 will be rejected by Apache APISIX, and the API security can be enhanced.
 
 [ACL](https://en.wikipedia.org/wiki/Access-control_list) is a way to control the accessible clients of API.
@@ -26,11 +26,11 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `acl-app`.
+1. The Service name is `acl-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `acl.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
@@ -45,7 +45,7 @@ The ACL plugin won't work if you don't configure the Authentication plugin.
 
 :::
 
-Besides, we'll create an API inside the `acl-app` Application.
+Besides, we'll create an API inside the `acl-app` Service.
 
 1. The API name is `json`.
 2. The path is `/json` (exact match).
@@ -53,7 +53,7 @@ Besides, we'll create an API inside the `acl-app` Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started) guides first
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first
 
 :::
 
@@ -82,8 +82,8 @@ Test ACL Allow Mode
 -------------------
 
 There are two running modes for the ACL: `Allow` and `Deny`. When the ACL plugin runs under `Allow` mode,
-The Consumers you specified are in the allowed list, and only these Consumers can access the Application / API;
-On the contrary, when ACL plugin runs under `Deny` mode, the Consumers you specified cannot access the Application / API
+The Consumers you specified are in the allowed list, and only these Consumers can access the Service / API;
+On the contrary, when ACL plugin runs under `Deny` mode, the Consumers you specified cannot access the Service / API
 (in the denied list).
 
 In this section, we'll test the ACL `Allow` mode.
@@ -92,15 +92,15 @@ In this section, we'll test the ACL `Allow` mode.
 
 The ACL plugin allows you to configure several Consumers by typing their names. This way is convenient when the Consumer account is not huge.
 
-Now let's create the ACL plugin on the `acl-app` Application by running the following steps. Of course, you can configure it on the API level. In such a case, only the API you configured is protected by the ACL plugin.
+Now let's create the ACL plugin on the `acl-app` Service by running the following steps. Of course, you can configure it on the API level. In such a case, only the API you configured is protected by the ACL plugin.
 
-1. Enter the `acl-app` Application details page.
+1. Enter the `acl-app` Service details page.
 2. Click on the **Add plugin** button.
 3. Select ACL and fill in the form.
 
 ![Add ACL Plugin](https://static.apiseven.com/2022/12/30/add-acl-plugin.png)
 
-In this case, we allow Camila and Christopher to access this Application.
+In this case, we allow Camila and Christopher to access this Service.
 
 Now let's send some API requests with four Consumers' API key perspectives.
 
@@ -134,15 +134,15 @@ It's not convenient to use the ACL plugin if the number of Consumers is large. I
 the ACL plugin via Consumer labels. In this section, we will show you how to use Consumer labels to configure the ACL
 allow list.
 
-Let's update the ACL plugin on the `acl-app` Application.
+Let's update the ACL plugin on the `acl-app` Service.
 
-1. Enter the `acl-app` Application details page.
+1. Enter the `acl-app` Service details page.
 2. Edit the ACL plugin.
 3. Update the configuration, and fill out the `Allowed Consumer Labels` to `team-1`.
 
 ![Update ACL Plugin 1](https://static.apiseven.com/2022/12/30/update-acl-plugin-1.png)
 
-As per the configuration, Consumers with the label `team-1` (Carter, Charles, and Christopher) can access this Application.
+As per the configuration, Consumers with the label `team-1` (Carter, Charles, and Christopher) can access this Service.
 
 Now let's send some API requests with four Consumers' API key perspectives.
 
@@ -174,13 +174,13 @@ Test ACL Deny Mode
 ------------------
 
 You can also configure the denied Consumer list in the ACL plugin. In such a case, Consumers not on the list
-can access the Application usually.
+can access the Service usually.
 
 ### Configuring Consumers Directly
 
-Let's update the ACL plugin on the `acl-app` Application.
+Let's update the ACL plugin on the `acl-app` Service.
 
-1. Enter the `acl-app` Application details page.
+1. Enter the `acl-app` Service details page.
 2. Edit the ACL plugin.
 3. Update the configuration, change the running mode to `Deny`, and fill out the `Denied Consumer` field.
 
@@ -218,7 +218,7 @@ curl http://127.0.0.1:9080/v1/json -H 'Host: acl.httpbin.org'  -H 'Authorization
 
 Similar to the `Allow` mode, you can also configure denied Consumers via labels.
 
-1. Enter the `acl-app` Application details page.
+1. Enter the `acl-app` Service details page.
 2. Edit the ACL plugin.
 3. Update the configuration, change the running mode to `Deny`, and fill out the `Denied Consumer Labels` to `team-2`.
 

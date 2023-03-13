@@ -6,16 +6,16 @@ show_feedback: true
 
 The CORS plugin allows users to enable the [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) mechanism on API7 Cloud.
 
-You can configure the CORS plugin in an Application or an API.
+You can configure the CORS plugin in an Service or an API.
 
-1. If you configure the CORS plugin only for an [Application](../../concepts/application.md), it'll affect all [APIs](../../concepts/api.md) in this Application.
+1. If you configure the CORS plugin only for an [Service](../../concepts/service.md), it'll affect all [APIs](../../concepts/api.md) in this Service.
 2. If you configure the CORS plugin only for an API, then the CORS plugin only affects this API.
-3. If you configure the CORS plugin for both an Application and an API, the CORS plugin in API takes precedence.
+3. If you configure the CORS plugin for both an Service and an API, the CORS plugin in API takes precedence.
 
 How to Configure CORS Plugin
 ----------------------------
 
-You can configure the CORS plugin when creating or updating an Application or API.
+You can configure the CORS plugin when creating or updating a Service or API.
 
 ![CORS Plugin](https://static.apiseven.com/2022/12/30/cors-plugin.png)
 

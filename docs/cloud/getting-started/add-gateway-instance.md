@@ -74,9 +74,9 @@ If you want to stop the APISIX instance, just run the command below:
 cloud-cli stop docker --name my-apisix
 ```
 
-Well done! You've just deployed an APISIX instance on Docker; it'll receive the configurations from API7 Cloud and report the status to API7 Cloud. Now, let's try to create an Application on API7 Cloud to drive your APISIX instance.
+Well done! You've just deployed an APISIX instance on Docker; it'll receive the configurations from API7 Cloud and report the status to API7 Cloud. Now, let's try to create a Service on API7 Cloud to drive your APISIX instance.
 
 Next
 ----
 
-[Create the HTTPBIN Application](./create-httpbin-app.md).
+[Create the HTTPBIN Service](./create-httpbin-service.md).

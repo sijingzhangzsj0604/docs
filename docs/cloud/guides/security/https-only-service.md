@@ -1,11 +1,11 @@
 ---
-title: Build HTTPS Only Application
+title: Build HTTPS Only Service
 reading_time: auto
 show_feedback: true
 ---
 
-Sometimes you don't want your clients to access the [Application](../../concepts/application.md) over HTTP.
-Since some security considerations, in such a case, you may want to build an HTTPS-only Application on API7 Cloud.
+Sometimes you don't want your clients to access the [Service](../../concepts/service.md) over HTTP.
+Since some security considerations, in such a case, you may want to build an HTTPS-only Service on API7 Cloud.
 
 Configure SSL Object
 --------------------
@@ -23,18 +23,18 @@ openssl req  -x509 -nodes -new  -keyout cloud.key -out cloud.crt -days 3650 -sub
 
 :::
 
-Configure HTTPS Protocol for Application
------------------------------------------
+Configure HTTPS Protocol for Service
+------------------------------------
 
 After you sign in to API7 Cloud, please go ahead according
 to the following steps:
 
-1. Go to the Application list page by clicking on the **Application** button under **API Management** (in the left sidebar).
-2. Search the target Application that you want to configure HTTPS protocol, clicking on the **edit** button.
-3. You'll be redirected to the Application edit page, configuring the `Protocol` field to `HTTPS` and saving the changes.
+1. Go to the Service list page by clicking on the **Service** button under **API Management** (in the left sidebar).
+2. Search the target Service that you want to configure HTTPS protocol, clicking on the **edit** button.
+3. You'll be redirected to the Service edit page, configuring the `Protocol` field to `HTTPS` and saving the changes.
 
 :::info
-In our case, the target Application has the following characteristics:
+In our case, the target Service has the following characteristics:
 
 1. The host is `cloud.httpbin.org`.
 2. The upstream target is `https://httpbin.org`.
@@ -45,7 +45,7 @@ In our case, the target Application has the following characteristics:
 Send requests to verify
 -----------------------
 
-Since we only enable HTTPS protocol, if we try to access an API in this Application,
+Since we only enable HTTPS protocol, if we try to access an API in this Service,
 we should get a `301 Moved Permanently` response asking us to use HTTPS protocol.
 
 ```shell

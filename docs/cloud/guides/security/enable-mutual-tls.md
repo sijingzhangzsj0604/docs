@@ -7,7 +7,7 @@ show_feedback: true
 Mutual TLS (aka mTLS) asks the client to provide a certificate as its
 identifier so that the server can verify it in a TLS handshake.
 
-This guide will show you how to enable the mTLS to protect your [Applications](../../concepts/application.md).
+This guide will show you how to enable the mTLS to protect your [Service](../../concepts/service.md).
 
 :::important
 
@@ -45,18 +45,18 @@ Create SSL Object
 Follow the tips in [How to Create SSL Object](../../concepts/ssl.md#how-to-create-ssl-object) and upload the server certificate, private key, CA certificate, API7 Cloud
 creates an SSL object.
 
-Create Application and API
+Create Service and API
 --------------------------
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-* The Application name is `mtls-auth-app`.
+* The Service name is `mtls-auth-app`.
 * The path prefix is `/v1`.
 * The protocol is `HTTPS`.
 * The HTTP Host is `mtls.httpbin.org`.
 * The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the mtls-auth-app Application.
+Besides, we'll create an API inside the mtls-auth-app Service.
 
 * The API name is `json`.
 * The path is `/json` (exact match).
@@ -64,7 +64,7 @@ Besides, we'll create an API inside the mtls-auth-app Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started)
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started)
 guides first
 
 :::

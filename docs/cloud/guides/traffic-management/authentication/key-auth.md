@@ -4,14 +4,14 @@ reading_time: auto
 show_feedback: true
 ---
 
-You may want to protect your [APIs](../../../concepts/api.md)  or [Applications](../../../concepts/application.md) by using API authentication.
+You may want to protect your [APIs](../../../concepts/api.md)  or [Services](../../../concepts/service.md) by using API authentication.
 With the requirement of authentication, API7 Cloud will only forward API requests with valid authentication credentials. Other requests (without
 credentials or with a wrong one) will be rejected and get a `401 Unauthorized` response.
 
 Key Auth is an API authentication method that asks the API clients to provide a valid
 key or token as the identifier. The key (or the token) will be shared by the API clients and the API provider or the API Gateway.
 
-This guide will introduce using Key Auth to protect your APIs on API7 Cloud. You can also safeguard Applications as long as you configure the Authentication plugin on the Application (instead of a specific API).
+This guide will introduce using Key Auth to protect your APIs on API7 Cloud. You can also safeguard Services as long as you configure the Authentication plugin on the Service (instead of a specific API).
 
 :::important
 
@@ -28,16 +28,16 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `key-auth-app`.
+1. The Service name is `key-auth-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `auth.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `key-auth-app` Application.
+Besides, we'll create an API inside the `key-auth-app` Service.
 
 1. The API name is `json`.
 2. The path is `/json` (exact match).
@@ -45,7 +45,7 @@ Besides, we'll create an API inside the `key-auth-app` Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../../getting-started) guides first
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../../getting-started) guides first
 
 :::
 

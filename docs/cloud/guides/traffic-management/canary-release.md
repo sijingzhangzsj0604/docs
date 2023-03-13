@@ -77,15 +77,19 @@ docker inspect <Apache APISIX Container Name/ID> -f '{{ .NetworkSettings.Network
 
 :::
 
-Create Application
-------------------
+Create Service
+--------------
 
-We'll create an [Application](../../concepts/application.md) with the following details in this guide.
+We'll create a [Service](../../concepts/service.md) with the following steps in this guide.
 
-1. The Application name is `canary-release`.
-2. The path prefix is `/v1`.
-3. The HTTP Host is `canary.nginx.test`.
-4. Set the upstream URL to the address of the stable nginx service (in our case it's `http://172.17.0.4`). Please use the below commands to get the correct IP address in your run.
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the **Create Service** button.
+4. Fill in the form to decide the Service attributes. In this case,
+   * The Service name is `canary-release`.
+   * The path prefix is `/v1`.
+   * The HTTP Host is `canary.nginx.test`.
+   * Set the upstream URL to the address of the stable nginx service (in our case it's `http://172.17.0.4`). Please use the below commands to get the correct IP address in your run.
 
 :::tip
 You can run the command below to fetch the container address of the nginx services.
@@ -100,19 +104,17 @@ docker inspect stable --format '{{ .NetworkSettings.Networks.bridge.IPAddress }}
 
 :::
 
-![Create Canary Release Application](https://static.apiseven.com/2022/12/30/canary-release-app-create.png)
-
 ### Create Canary Upstream Version
 
-API7 Cloud supports creating multiple versions for the upstream of [Application](../../concepts/application.md). It's handy when there is more than one version for the backend service. We'll create another
+API7 Cloud supports creating multiple versions for the upstream of [Service](../../concepts/service.md). It's handy when there is more than one version for the backend service. We'll create another
 upstream version to associate the canary nginx service.
 
-On the Application detail page, click on the **New Version** button (in the upstream section) to
-launch the upstream create window.
-
-![New Upstream Version in Application Detail Page](https://static.apiseven.com/2022/12/30/canary-release-app-new-upstream.png)
-
-![Create Canary Upstream](https://static.apiseven.com/2022/12/30/create-canary-upstream.png)
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the Service name **canary-release** that you just created.
+4. On the Service details page, click on the **New Version** button, then fill the form:
+   * Set **Version** to `canary`.
+   * Set the **URL** to the nginx container address, e.g., `http://172.17.0.5`.
 
 :::note
 The newly created upstream won't be effective. API7 Cloud will forward all the traffic to the default
@@ -127,7 +129,7 @@ curl http://127.0.0.1:9080/v1/test-canary -H 'Host: canary.nginx.test' -s
 
 ### Create an API
 
-Now let's create an [API](../../concepts/api.md) in this Application.
+Now let's create an [API](../../concepts/api.md) in this Service.
 
 ![Create Test Canary API](https://static.apiseven.com/2022/12/30/create-test-canary-api.png)
 
@@ -137,8 +139,8 @@ API7 Cloud Canary Release Workflow
 ----------------------------------
 
 API7 Cloud allows users to create canary release rules for each
-[Application](../../concepts/application.md) (canary release rules
-for different Applications won't affect each other).
+[Service](../../concepts/service.md) (canary release rules
+for different Service won't affect each other).
 
 A rule you create isn't effective (avoiding some accidental mistakes).
 Only if you click on the **Start** button to enable it, can it be effective.
@@ -161,7 +163,7 @@ We can describe the workflow (state transition) of the API7 Cloud canary release
 ![Canary Release Workflow](https://static.apiseven.com/2022/12/30/canary-release-workflow.png)
 
 :::important
-API7 Cloud has a limitation that **users can only have one canary release rule in progress (for an Application)**. Since multiple rules
+API7 Cloud has a limitation that **users can only have one canary release rule in progress (for a Service)**. Since multiple rules
 in progress will make the traffic distribution chaotic.
 :::
 
@@ -171,32 +173,28 @@ Create Canary Release Rule
 ### Shift Traffic by Percentage
 
 We want to forward `50%` traffic from the stable nginx service to the canary one. So
-we will create a canary release rule for this Application.
+we need to do the following steps:
 
-On the Application detail page, click on the **Setup Rule** (in the canary releases section) to launch
-the canary release rule create window.
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the Service name **canary-release** that you just created.
+4. On the Service details page, click on the **Setup Rule** button, then fill the form:
+   * Set the **Name** field to `Release the Canary Nginx Service`.
+   * Set the **Target Upstream Version** field to `canary`.
+   * Set the **Type** field to `Percentage Based`.
+   * Set the **Percentage** field to `50`.
 
-![Create Canary Release Rule](https://static.apiseven.com/2022/12/30/canary-release-app-new-rule.png)
-
-![Canary Release Rule 1](https://static.apiseven.com/2022/12/30/canary-release-rule-1.png)
-
-The target upstream version of this rule is the one we just created, and the type of this rule is
-`Percentage Based`. There are two kinds of canary release rules:
+There are two kinds of canary release rules:
 
 * **Percentage Based**: Shift traffic according to the proportion specified by the `Percentage` field, in our case, is `50`.
 * **Condition Based**: Shift traffic according to the API requests' characteristics (e.g., HTTP headers, URI).
 
-The rule won't be effective once you create it. As you can see, its status is `Suspended`. In such a case, all traffic will still be
-forwarded to the stable nginx service.
+The rule won't be effective once you create it. its status is `Suspended`. In such a case, all traffic will still be
+forwarded to the stable nginx service. To change the rule status:
 
-![Canary Release Rule List](https://static.apiseven.com/2022/12/30/canary-release-rule-list.png)
+To see the rule details, click on the name of the rule. You can also change the rule status there.
 
-Click on the name of the rule, API7 Cloud will show you the rule details, and you can also change
-the rule status there.
-
-![Canary Release Rule Details](https://static.apiseven.com/2022/12/30/canary-release-rule-details.png)
-
-Let's click on the **Start** button to enable the rule. After that, some API requests (about `50%`)
+Now let's click on the **Start** button to enable the rule. After that, some API requests (about `50%`)
 will be forwarded to the canary nginx service.
 
 ```shell
@@ -227,10 +225,8 @@ service should be the same as the canary one.
 :::
 
 Assume we consider that the canary nginx service is stable enough, and we want to forward
-all the traffic to it. Then let's finish the canary rule (click on the **Finish** button
-on the canary release rule window) and send some requests to see the output.
-
-![Finished Canary Release Rule](https://static.apiseven.com/2022/12/30/finished-canary-release-rule.png)
+all the traffic to it. Then let's finish the canary rule (click on the **Finish** button)
+and send some requests to see the output.
 
 ```shell
 for ((i = 0; i < 10; i++)); do
@@ -269,15 +265,19 @@ to the canary service and forward others to the stable one. We want to forward r
 canary nginx service. In such a case, we'll create a canary release rule with the
 type of `Condition Based`.
 
-Before you go head, please reset the `Upstream in Use` field of this Application to `default`. It's
+Before you go head, reset the **Upstream in Use** field of this Service to `default`. This field was
 changed to `canary` after executing the steps in [Shift Traffic by Percentage](#shift-traffic-by-percentage).
-You can click on the edit button to open the edit window for the basic information.
-
-![Edit Application Basic Information](https://static.apiseven.com/2022/12/30/edit-app-basic-information.png)
 
 Then create a new canary release rule:
 
-![Canary Release Rule 2](https://static.apiseven.com/2022/12/30/canary-release-rule-2.png)
+* Set the **Name** to `Release the Canary Nginx Service with X-Debug header`.
+* Set the **Target Upstream Version** to `canary`.
+* Set the **Type** to `Condition Based`.
+* Add a condition:
+  * Set the **Position** to `Header`.
+  * Set the **Name** to `X-Debug`.
+  * Set the **Operator** to `Equal`.
+  * Set the **Value** to `true`.
 
 This rule's condition is that all API requests should carry the `X-Debug` header,
 and its value should be `true`. Then these requests will be forwarded to the `canary` upstream version.

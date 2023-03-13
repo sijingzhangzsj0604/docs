@@ -4,17 +4,17 @@ reading_time: auto
 show_feedback: true
 ---
 
-In API7 Cloud, an API is a specific endpoint exposed by an [Application](./application.md).
+In API7 Cloud, an API is a specific endpoint exposed by an [Service](./service.md).
 
 How to Create an API
 --------------------
 
-Note API is an affiliated resource of the Application, so before you go further,
-please create an [Application](./application.md) first.
+Note API is an affiliated resource of the Service, so before you go further,
+please create an [Service](./service.md) first.
 
-![HTTPBIN Application Details](https://static.apiseven.com/2022/12/30/httpbin-app-detail.png)
+![HTTPBIN  Details](https://static.apiseven.com/2022/12/30/httpbin-app-detail.png)
 
-On the Application details page, scroll down to the API section and click on the **Create API** button, and you'll be redirected to a form to create an API.
+On the Service details page, scroll down to the API section and click on the **Create API** button, and you'll be redirected to a form to create an API.
 ![Create HTTPBIN JSON API](https://static.apiseven.com/2022/12/30/create-httpbin-json-api.png)
 
 Two kinds of content that you should fill out:
@@ -25,7 +25,7 @@ Two kinds of content that you should fill out:
 Get API Details
 ---------------
 
-On the Application details page, please scroll down to the API section,
+On the Service details page, please scroll down to the API section,
 search for the API you want to see, and click on its name. API7 Cloud will redirect you to the API details page.
 
 ![HTTPBIN JSON API DETAIL](https://static.apiseven.com/uploads/2023/01/12/1n3Kv5rc_Screenshot%202023-01-12%20at%2010.13.59.png)
@@ -48,7 +48,7 @@ IT'S DANGEROUS TO DELETE AN API, SO PLEASE MAKE SURE YOU NO LONGER USE THIS API.
 
 ![Delete JSON API](https://static.apiseven.com/2022/12/30/delete-api.png)
 
-On the Application details page, scroll down to the API section,
+On the Service details page, scroll down to the API section,
 search for the API you want to delete, and click on the trash can icon. API7 Cloud will prompt you to confirm the deletion.
 
 ![Double Check of Delete JSON API](https://static.apiseven.com/2022/12/30/delete-api-double-check.png)
@@ -60,11 +60,11 @@ Some fields are vital for the API to work.
 
 ### Path
 
-`Path` is the URI path of the API. It'll start with the [Path Prefix](./application.md#path-prefix).
-You can decide to if strip the `Path Prefix` (through the `Strip Application Path Prefix` option)
+`Path` is the URI path of the API. It'll start with the [Path Prefix](./service.md#path-prefix).
+You can decide to if strip the `Path Prefix` (through the `Strip Service Path Prefix` option)
 before the request goes upstream. As an example, if the `Path Prefix` is `/api/v1`, the `Path` is
 `/products`, requests will have `/api/v1/products` as the URI path when they go to the upstream if the
-`Strip Application Path Prefix` option is disabled; On the contrary, if the `Strip Application Path Prefix`
+`Strip Service Path Prefix` option is disabled; On the contrary, if the `Strip Service Path Prefix`
 is enabled, the `Path` will be `/products`, and requests will have `/products`.
 
 :::note

@@ -4,13 +4,13 @@ reading_time: auto
 show_feedback: true
 ---
 
-In some cases you won't hope requests from anywhere can access some your [Applications](../../concepts/application.md) or [APIs](../../concepts/api.md).
+In some cases you won't hope requests from anywhere can access some your [Service](../../concepts/service.md) or [APIs](../../concepts/api.md).
 For instance, you may only allow requests forwarded by the Layer-4 load balancer; Or if you find some suspicious IP addresses and you want to add them to
 the deny list so that they cannot access your services.
 
-This guide will show you how to use the IP Restriction plugin to protect your Applications and APIs. IP Restriction has two running modes: `Allow` and `Deny`.
+This guide will show you how to use the IP Restriction plugin to protect your Service and APIs. IP Restriction has two running modes: `Allow` and `Deny`.
 When IP Restriction plugin works in the `Allow` mode, only requests from the IP addresses or belonging to the [CIDR Ranges](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#:~:text=CIDR%20is%20also%20used%20for,of%20bits%20in%20the%20address.)
-You configured can access the Applications or APIs; On the contrary, if IP Restriction works in the `deny` mode, Apache APISIX will block requests from the IP addresses or belonging to the CIDR Ranges you configured.
+You configured can access the Services or APIs; On the contrary, if IP Restriction works in the `deny` mode, Apache APISIX will block requests from the IP addresses or belonging to the CIDR Ranges you configured.
 
 :::tip
 
@@ -22,17 +22,17 @@ You cannot run the IP Restriction plugin in the `Allow` mode and `Deny` mode sim
 The IP Restriction plugin is not available in the Free plan. Please see the [Pricing Page](https://api7.ai/pricing) for details.
 :::
 
-Create Application and API
---------------------------
+Create Service and API
+----------------------
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-* The Application name is `ip-restriction-app`.
+* The Service name is `ip-restriction-app`.
 * The path prefix is `/v1`.
 * The HTTP Host is `ip-restriction.httpbin.org`.
 * The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `ip-restrction-app` Application.
+Besides, we'll create an API inside the `ip-restrction-app` Service.
 
 * The API name is `anything`.
 * The path is `/anything` (exact match).
@@ -40,7 +40,7 @@ Besides, we'll create an API inside the `ip-restrction-app` Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started)
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started)
 guides first
 
 :::
@@ -48,7 +48,7 @@ guides first
 Test the Allow Mode
 --------------------
 
-Now let's add the IP Restriction plugin on the `ip-restriction-app` Application.
+Now let's add the IP Restriction plugin on the `ip-restriction-app` Service.
 You can enter the `ip-restriction-app` details page, click on the **Add Plugin** button,
 select IP Restriction plugin, and fill out the form.
 

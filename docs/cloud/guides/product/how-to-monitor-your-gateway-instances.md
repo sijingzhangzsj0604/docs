@@ -13,14 +13,10 @@ Query Filter
 ------------
 
 By default, API7 Cloud shows metrics for all gateway instances
-among all [Applications](../../concepts/application.md) and their [APIs](../../concepts/api.md),
-which is a global view. Use the query filter if you want to see the metrics for a specific instance or an Application (even an API).
+among all [Services](../../concepts/service.md) and their [APIs](../../concepts/api.md),
+which is a global view. Use the query filter if you want to see the metrics for a specific instance or a Service (even an API).
 
-![Instance Query Filter](https://static.apiseven.com/2022/12/30/instance-query-filter.png)
-![Application Query Filter](https://static.apiseven.com/2022/12/30/app-query-filter.png)
-![API Query Filter](https://static.apiseven.com/2022/12/30/api-query-filter.png)
-
-You can use the instance and Application/API filters simultaneously so that you can see the monitoring data for the specific Application/API in an instance.
+You can use the instance and Service/API filters simultaneously to see the monitoring data for the specific Service/API in an instance.
 
 Query Time Range
 ----------------

@@ -4,7 +4,7 @@ reading_time: auto
 show_feedback: true
 ---
 
-In API7 Cloud, a Consumer represents a caller of the [Application](./application.md) or
+In API7 Cloud, a Consumer represents a caller of the [Service](./service.md) or
 [API](./api.md), a Consumer will attach some [plugins](./plugin.md) like authentication,
 throttling to limit the access.
 

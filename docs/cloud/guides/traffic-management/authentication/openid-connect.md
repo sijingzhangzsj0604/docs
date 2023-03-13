@@ -4,7 +4,7 @@ reading_time: auto
 show_feedback: true
 ---
 
-OpenID Connect is an identity layer based on the OAuth 2.0 framework. It allows third-party applications to
+OpenID Connect is an identity layer based on the OAuth 2.0 framework. It allows third-party Service to
 authenticate the end-user and obtain their basic information.
 
 API7 Cloud supports the OpenID Connect plugin so that you can authenticate your API consumers with well-known providers
@@ -20,16 +20,16 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `oidc-app`.
+1. The Service name is `oidc-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `oidc.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `oidc-app` Application.
+Besides, we'll create an API inside the `oidc-app` Service.
 
 1. The API name is `anything`.
 2. The path is `/anything` (prefix match).
@@ -37,11 +37,11 @@ Besides, we'll create an API inside the `oidc-app` Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../../getting-started) guides first
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../../getting-started) guides first
 
 :::
 
-Then, let's add the OpenID Connect plugin to the `oidc-app` Application.
+Then, let's add the OpenID Connect plugin to the `oidc-app` Service.
 
 ![Add OpenID Connect Plugin](https://static.apiseven.com/2022/12/30/add-oidc-plugin.png)
 
@@ -59,7 +59,7 @@ Please avoid using any meaningful business API endpoint when you design the `Red
 Test the Authentication
 -----------------------
 
-We'll use the browser to access the `oidc-app` Application. The URL is `https://oidc.httpbin.org:9080/v1/anything` in our case.
+We'll use the browser to access the `oidc-app` Service. The URL is `https://oidc.httpbin.org:9080/v1/anything` in our case.
 
 Before doing that, please make sure you set the DNS resolution for
 `odic-app.httpbin.org` to your Apache APISIX instance (e.g., change the `/etc/hosts` file).

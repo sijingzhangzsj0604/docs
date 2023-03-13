@@ -76,17 +76,17 @@ Refer to [Log Format in Log Collection](./log-collection-log-format.md) to learn
 
 :::
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-* The Application name is `kafka-httpbin`.
+* The Service name is `kafka-httpbin`.
 * The path prefix is `/v1`.
 * The protocol is `HTTP`.
 * The HTTP Host is `kafka.httpbin.org`.
 * The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `kafka-httpbin` Application.
+Besides, we'll create an API inside the `kafka-httpbin` Service.
 
 * The API name is `json`.
 * The path is `/json` (exact match).
@@ -94,18 +94,18 @@ Besides, we'll create an API inside the `kafka-httpbin` Application.
 
 :::tip
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started)
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started)
 guides first
 
 :::
 
 ### Add Logging Plugin
 
-Now let's add the Logging plugin to the `kafka-httpbin` Application.
+Now let's add the Logging plugin to the `kafka-httpbin` Service.
 
 ![Add Logging Plugin](https://static.apiseven.com/2022/12/30/add-logging-plugin-2.png)
 
-The Logging plugin binds some existing Log Collection Plans to the Application or API.
+The Logging plugin binds some existing Log Collection Plans to the Service or API.
 Here we bind the `kafka-logger`.
 
 ### Send Some Requests

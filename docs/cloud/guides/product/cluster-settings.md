@@ -12,7 +12,7 @@ Prepare the Environment
 -----------------------
 
 Also, what we'll adjust are cluster scope settings. We still need to deploy a gateway
-instance and create an [Application](../../concepts/application.md) and [API](../../concepts/api.md), since
+instance and create an [Service](../../concepts/service.md) and [API](../../concepts/api.md), since
 we will verify the setting changes via API requests.
 
 ### Deploy Apache APISIX
@@ -20,16 +20,16 @@ we will verify the setting changes via API requests.
 Please refer to [How to Deploy Apache APISIX](../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `cp-setting-app`.
+1. The Service name is `cp-setting-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `cp-setting.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `cp-setting-app` Application.
+Besides, we'll create an API inside the `cp-setting-app` Service.
 
 1. The API name is `anything`.
 2. The path is `/anyting` (exact match), and strip the path prefix.
@@ -37,7 +37,7 @@ Besides, we'll create an API inside the `cp-setting-app` Application.
 
 :::note
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started) guides first.
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first.
 
 :::
 

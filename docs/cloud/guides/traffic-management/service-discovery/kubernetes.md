@@ -95,11 +95,11 @@ In this case:
 
 You can adjust the settings according to your real cases.
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `sd-app`
+1. The Service name is `sd-app`
 2. The path prefix is `/v1`
 3. The HTTP Host is `sd.httpbin.org`
 4. Select **service Discovery** when filling the upstream
@@ -111,7 +111,7 @@ We'll create an Application with the following details in this guide.
 
 ![K8s Service Discovery Upstream](https://static.apiseven.com/2022/12/30/k8s-sd-upstream.png)
 
-Besides, we'll create an API inside the `sd-app` Application.
+Besides, we'll create an API inside the `sd-app` Service.
 
 1. The API name is `anything`.
 2. The path is `/anything` (prefix match), and strip the path prefix.
@@ -163,7 +163,7 @@ X-APISIX-Upstream-Status: 200
 The API request is forwarded to the HTTPBIN service, which means the service discovery takes effect.
 
 :::important
-If you disable the Kubernetes service discovery, API requests to Applications that use service discovery upstream will fail,
+If you disable the Kubernetes service discovery, API requests to Service that use service discovery upstream will fail,
 and Apache APISIX will return `503`. So be careful when you want to disable the Kubernetes service discovery.
 :::
 

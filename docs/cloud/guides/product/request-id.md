@@ -17,16 +17,16 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Application and API
+### Create Service and API
 
-We'll create an Application with the following details in this guide.
+We'll create a Service with the following details in this guide.
 
-1. The Application name is `request-id-app`.
+1. The Service name is `request-id-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `request-id.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `request-id-app` Application.
+Besides, we'll create an API inside the `request-id-app` Service.
 
 1. The API name is `anything`.
 2. The path is `/anything` (prefix match), and strip the path prefix.
@@ -34,17 +34,17 @@ Besides, we'll create an API inside the `request-id-app` Application.
 
 :::note
 
-If you don't know how to configure an Application and API, please refer to the [Getting Started](../../getting-started) guides first
+If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first
 
 :::
 
 ### Add Request ID Plugin
 
-Now let's add the Request ID plugin to the `request-id-app` Application.
+Now let's add the Request ID plugin to the `request-id-app` Service.
 
 ![Request ID Plugin](https://static.apiseven.com/2022/12/30/request-id.png)
 
-API7 Cloud will add an [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) for each request in this Application.
+API7 Cloud will add an [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) for each request in this Service.
 We also include the ID in the response header.
 
 Test

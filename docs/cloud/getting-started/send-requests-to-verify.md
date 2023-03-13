@@ -1,10 +1,10 @@
 ---
-title: Test the HTTPBIN Application and API
+title: Test the HTTPBIN Service and API
 reading_time: auto
 show_feedback: true
 ---
 
-Now you created the HTTPBIN Application and a JSON API for it. Let's send a request to verify if it's working.
+Now you created the HTTPBIN Service and a JSON API for it. Let's send a request to verify if it's working.
 
 ```shell
 curl http://127.0.0.1:9080/v1/json -H 'Host: cloud.httpbin.org' -v
@@ -62,7 +62,7 @@ As you can see, we got a JSON string from APISIX, which is the response that we 
 HTTPBIN service randomly generates the JSON string data, so the data you got might differ from the data you get from this request.
 :::
 
-Congratulations! Now that you test the HTTPBIN Application and its JSON API, everything is working.
+Congratulations! Now that you test the HTTPBIN Service and its JSON API, everything is working.
 
 Next
 ----

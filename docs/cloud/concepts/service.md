@@ -1,68 +1,69 @@
 ---
-title: What is Application
+title: What is Service
 reading_time: auto
 show_feedback: true
 ---
 
-In API7 Cloud, the Application is a high-level abstraction for a backend (or upstream) from
+In API7 Cloud, the Service is a high-level abstraction for a backend (or upstream) from
 API Gateway's point of view. In terms of architecture, it's equivalent to a micro-service,
 which contains a set of [APIs](./api.md) (all of them will be effective on the API Gateway).
 
-How to create an Application
-----------------------------
-
-After you sign in to API7 Cloud and click on the Applications tab
-(under the API Management), API7 Cloud will redirect you to the Application list page
-(this is the place where you can find all existing Applications).
-
-![Enter Application List](https://static.apiseven.com/2022/12/30/enter-application-list.png)
-
-Press the **Create Application** button and fill out the form to create the Application.
-
-![Create HTTP Application](https://static.apiseven.com/2022/12/30/create-httpbin-app.png)
-
-Three kinds of content that you should fill in to create an Application:
-
-1. **Basic**, where you can specify the Application name,
-   description, protocol, and other fields.
-2. **Upstream**, where you can specify the upstream information (e.g., the target URLs).
-3. [**Plugins**](./plugin.md), where you can specify a set of plugins.
-
-:::important:::
-The switch in the upper right controls if the Application is published. Only
-published Application will be visible for gateway instances.
-:::
-
-Get Application Details
+How to create a Service
 -----------------------
 
-On the Application List page, search for the Application you want, and click on the
-Application name. API7 Cloud will redirect you to the Application details page.
+To create a Service, do the following:
 
-![HTTPBIN Application Details](https://static.apiseven.com/2022/12/30/httpbin-app-detail.png)
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the **Create Service** button.
+4. Fill in the form to decide the Service attributes. 
+   Three kinds of content that you should fill in to create Service:
+      * **Basic**, where you can specify the Service name, description, protocol, and other fields.
+      * **Upstream**, where you can specify the upstream information (e.g., the target URLs).
+      * [**Plugins**](./plugin.md), where you can specify a set of plugins.
 
-On the detail page, you can see the following attributes of this Application:
-
-1. Basic information (e.g., [Protocol](#protocol), [Host](#host))
-2. [Upstream](#upstream) information
-3. API list
-4. [Plugins](./plugin.md) on this Application
-5. Canary Release rules
-
-Delete an Application
----------------------
-
-:::danger
-**IT'S DANGEROUS TO DELETE AN APPLICATION UNLESS YOU KNOW IT'S NO LONGER USED.**
+:::important:::
+The switch in the upper right controls if the Service is published. Only
+published Service will be visible for gateway instances.
 :::
 
-Delete all the APIs in the Application before you try to delete the Application, or the delete operation will fail.
+Get Service Details
+-------------------
 
-![Delete Application](https://static.apiseven.com/2022/12/30/delete-app.png)
+To get the Service details, do the following:
 
-Click on the trash icon to delete the Application, and you need to fill in the name of the target Application.
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the name of the Service that you want to browse. You can see the following attributes of the Service:
+   * Basic information (e.g., [Protocol](#protocol), [Host](#host))
+   * [Upstream](#upstream) information
+   * API list
+   * [Plugins](./plugin.md) on this Service
+   * Canary Release rules
 
-![Double Check for deleting Application](https://static.apiseven.com/2022/12/30/delete-app-double-check.png)
+Delete a Service
+----------------
+
+:::danger
+**IT'S DANGEROUS TO DELETE A SERVICE UNLESS YOU KNOW IT'S NO LONGER USED.**
+:::
+
+Delete all the APIs in the Service before you try to delete the Service, or the delete operation will fail.
+
+To delete a Service, do the following:
+
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the trash icon in the corresponding Service row.
+4. You'll be asked to fill the Service name to do the delete double check.
+
+Or you can:
+
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the name of the Service that you want to browse.
+4. Click on the **Actions** button, select the **Delete** from the manu.
+4. You'll be asked to fill the Service name to do the delete double check.
 
 Key Fields
 ----------
@@ -71,30 +72,30 @@ Some fields are vital for the API to work.
 
 ### Protocol
 
-Which protocol the Application will use. Currently, candidates are `HTTP`, `HTTPS`, and `HTTP, HTTPS`.
+Which protocol the Service will use. Currently, candidates are `HTTP`, `HTTPS`, and `HTTP, HTTPS`.
 
-* `HTTP`. The Application only handles HTTP traffic.
-* `HTTPS`. The Application only handles HTTPS traffic. In such a case, gateway instances will redirect requests sent to the HTTP port to the HTTPS port.
-* `HTTP, HTTPS`. The Application handles both HTTP and HTTPS traffic.
+* `HTTP`. The Service only handles HTTP traffic.
+* `HTTPS`. The Service only handles HTTPS traffic. In such a case, gateway instances will redirect requests sent to the HTTP port to the HTTPS port.
+* `HTTP, HTTPS`. The Service handles both HTTP and HTTPS traffic.
 
 ### Path Prefix
 
-`Path Prefix` is the path prefix of the Application. It'll be used with the [API Path](./api.md#path)
+`Path Prefix` is the path prefix of the Service. It'll be used with the [API Path](./api.md#path)
 together to form the full API path.
 
 ### Host
 
-`Host` indicates the HTTP Host header value for requests to the Application.
+`Host` indicates the HTTP Host header value for requests to the Service.
 
 ### Upstream
 
 Fields in the **Upstream** section specify details about the upstream (in other words,
 the backend micro-service).
 
-API7 Cloud supports configuring multiple Upstream versions for the same Application. This feature is
+API7 Cloud supports configuring multiple Upstream versions for the same Service. This feature is
 always used with the Canary Release so that your backend service can transit from the old version to the new one smoothly.
 
-You can only create one Upstream version (version name will be `default`) when creating the Application.
+You can only create one Upstream version (version name will be `default`) when creating the Service.
 By default, you just need to specify the upstream address (URL), e.g., `https://httpbin.org`.
 
 ### Upstream Version in Use
@@ -106,8 +107,6 @@ All API requests will be forwarded to this Upstream version (if no Canary Releas
 
 If the use case is simple, you just need to fill in the backend service address. However, some
 advanced settings might be helpful when the scenarios are complicated.
-
-![Advanced Upstream Settings](https://static.apiseven.com/2022/12/30/advanced-upstream-settings.png)
 
 :::tip
 All the advanced upstream settings are collapsed by default. Click on **View Advanced Upstream Options**

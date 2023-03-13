@@ -8,7 +8,7 @@ Personal Access Token is an authentication method that allows you to access
 the [API7 Cloud API](https://api7.cloud/api) without providing your
 account name and password. It helps integrate API7 Cloud with your programs.
 
-You may want to integrate API7 Cloud API with your existing application in several
+You may want to integrate API7 Cloud API with your existing Service in several
 cases like:
 
 1. Integrate API7 Cloud with your CI/CD pipeline (to expose an API to API Gateway after it's released).
