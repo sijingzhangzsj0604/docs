@@ -23,13 +23,13 @@ APISIX has a flexible plugin extension system and a number of existing plugins f
 - [Open Policy Agent (OPA)](https://apisix.apache.org/docs/apisix/plugins/opa/)
 - [Forward Authentication](https://apisix.apache.org/docs/apisix/plugins/forward-auth/)
 
-In this tutorial, you will create a _consumer_ with _key authentication_, and learn how to enable and disable key authentication.
+In this tutorial, you will create a consumer with key authentication, and learn how to enable and disable key authentication.
 
 ## What is a Consumer
 
-A Consumer is an application or a developer who consumes the API.
+A _consumer_ is an application or a developer who consumes the API.
 
-In APISIX, a Consumer requires a unique _username_ and an authentication _plugin_ from the list above to be created. 
+In APISIX, a consumer requires a unique `username` to be created. As part of the key authentication configuration, you would also add one of the authentication plugins from the list above to the consumer's `plugin` field. 
 
 ## What is Key Authentication
 
