@@ -30,6 +30,7 @@
   --ifm-color-info-dark: #3166DD;
   --ifm-menu-color: #1A202C;
   --ifm-container-width-xl: 1470px;
+  --docusaurus-highlighted-code-line-bg: rgba(158, 158, 158, 0.15);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -46,8 +47,8 @@
 
 /* Markdown Tip > a CSS */
 .alert a {
-  color: var(--ifm-color-success-contrast-foreground)!important;
-  text-decoration-color: var(--ifm-alert-border-color)!important;
+  color: var(--ifm-color-success-contrast-foreground) !important;
+  text-decoration-color: var(--ifm-alert-border-color) !important;
   text-decoration: underline;
 }
 
@@ -61,6 +62,7 @@
 .navbar-sidebar {
   top: 70px;
 }
+
 .navbar__brand {
   margin-right: 30px;
 }
@@ -82,24 +84,24 @@
 
 @media (min-width: 997px) {
   .DocSearch-Modal {
-    margin: 70px auto auto!important;
+    margin: 70px auto auto !important;
   }
 }
 
 .DocSearch-Container {
-  z-index: 500!important;
+  z-index: 500 !important;
 }
 
 .menu {
   font-weight: 400;
-  padding-top: 20px!important;
+  padding-top: 20px !important;
 }
 
 @media (min-width: 997px) {
   .container {
     padding-left: 32px;
-    padding-top: 2rem!important;
-    padding-bottom: 4rem!important;
+    padding-top: 2rem !important;
+    padding-bottom: 4rem !important;
   }
 
   /* Desktop Style */
