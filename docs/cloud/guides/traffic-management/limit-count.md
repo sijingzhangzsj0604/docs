@@ -5,26 +5,26 @@ show_feedback: true
 ---
 
 The Limit Count plugin limits the number of requests can be handled (in the given time period)
-for an [Service](../../concepts/service.md) or [API](../../concepts/api.md).
+for a [service](../../concepts/service.md) or [route](../../concepts/route.md).
 
 :::info
 The quota configured on API7 Cloud is for individual gateway instances.
 It's exclusive instead of shared (among all of your instances).
 :::
 
-You can configure the Limit Count plugin in a Service or an API.
+You can configure the Limit Count plugin in a service or a route.
 
-1. If you configure the Limit Count plugin only for a Service, it'll affect all APIs in this Service.
-2. If you configure the Limit Count plugin only for an API, then the Limit Count plugin only affects this API.
-3. If you configure the Limit Count plugin for both a Service and an API, the Limit Count plugin in API takes precedence.
+1. If you configure the Limit Count plugin only for a service, it'll affect all routes in this Service.
+2. If you configure the Limit Count plugin only for a route, then the Limit Count plugin only affects this route.
+3. If you configure the Limit Count plugin for both a service and a route, the Limit Count plugin in route takes precedence.
 
-> When you configure the Limit Count plugin in Service, all APIs in it won't share the rating quota,
+> When you configure the Limit Count plugin in service, all routes in it won't share the rating quota,
 they don't affect each other.
 
 How to Configure Limit Count Plugin
 -------------------------------------
 
-You can configure the Limit Count plugin when creating or updating a Service or API.
+You can configure the Limit Count plugin when creating or updating a service or route.
 
 ![Limit Count Plugin](https://static.apiseven.com/2023/01/03/63b3dec96c55d.png)
 

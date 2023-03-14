@@ -20,24 +20,24 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Service and API
+### Create Service and Route
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-1. The Service name is `oidc-app`.
+1. The service name is `oidc-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `oidc.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `oidc-app` Service.
+Besides, we'll create a route inside the `oidc-app` Service.
 
-1. The API name is `anything`.
+1. The route name is `anything`.
 2. The path is `/anything` (prefix match).
 3. Accepted HTTP method is `GET`.
 
 :::tip
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../../getting-started) guides first
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../../getting-started) guides first
 
 :::
 
@@ -47,8 +47,8 @@ Then, let's add the OpenID Connect plugin to the `oidc-app` Service.
 
 We create an [Application](https://auth0.com/docs/get-started/applications) on Auth0 before and fill in its `Client ID`, `Client Secret`, and `Identity Server` here.
 You should replace them according to your actual case. Moreover, we fill the `Redirect URI` to `http://oidc.httpbin.org:9080/v1/anything/callback` so that the
-redirected API call will also match the `anything` API. You can use any endpoint if you ensure the redirected API call will be handled by the
-same API where the OIDC authentication starts.
+redirected API call will also match the `anything` route. You can use any endpoint if you ensure the redirected API call will be handled by the
+same route where the OIDC authentication starts.
 
 :::important
 

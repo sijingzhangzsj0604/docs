@@ -11,18 +11,18 @@ By saying handled, it means requests might be:
 2. protected (authentication, authorization, rate-limiting, etc.);
 3. recorded (logging, metrics, etc.);
 
-A plugin can be attached on a specific [Service](./service.md),
-[API](./api.md), [Consumer](./consumer.md), or [Cluster](./cluster.md).
+A plugin can be attached on a specific [service](./service.md),
+[route](./route.md), [consumer](./consumer.md), or [cluster](./cluster.md).
 The effective rules of the plugin are as follows:
 
-* Plugins attached to the API only work for this API and will override the same
-ones on the Service (instead of running them twice).
-* Plugins attached to the Service will affect all APIs in this Service.
-* Plugins attached to the Consumer only work for this Consumer and will override the same
-ones on the Service and API (instead of running them twice).
-* Plugins attached to the Cluster will be effective for all API requests. Care must
-be taken that these plugins won't override the same ones on the Service, API, and Consumer, i.e.
-same plugins will be run twice (the one on Cluster runs first).
+* Plugins attached to the route only work for this route and will override the same
+ones on the service (instead of running them twice).
+* Plugins attached to the service will affect all routes in this Service.
+* Plugins attached to the consumer only work for this consumer and will override the same
+ones on the service and route (instead of running them twice).
+* Plugins attached to the cluster will be effective for all API requests. Care must
+be taken that these plugins won't override the same ones on the service, route, and consumer, i.e.
+same plugins will be run twice (the one on cluster runs first).
 
 What's Next
 -----------

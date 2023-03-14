@@ -1,5 +1,5 @@
 ---
-title: Create WebSocket API
+title: Create WebSocket Route
 reading_time: auto
 show_feedback: true
 ---
@@ -7,7 +7,7 @@ show_feedback: true
 [WebSocket](https://en.wikipedia.org/wiki/WebSocket#:~:text=WebSocket%20is%20a%20computer%20communications,protocol%20is%20known%20as%20WebSockets.) enables the full-duplex
 communication between the client and server with low overheads and latency.
 
-This guide will teach you how to create WebSocket API on API7 Cloud.
+This guide will teach you how to create WebSocket route on API7 Cloud.
 
 Prepare the Environment
 -----------------------
@@ -36,7 +36,7 @@ docker inspect <Apache APISIX Container Name/ID> -f '{{ .NetworkSettings.Network
 
 :::
 
-### Create Service and API
+### Create Service and Route
 
 We'll create a Service with the following details in this guide.
 
@@ -54,29 +54,29 @@ docker inspect websocket -f '{{ .NetworkSettings.Networks.bridge.IPAddress }}'
 
 :::
 
-Besides, we'll create an API inside the `websocket` Service.
+Besides, we'll create a route inside the `websocket` Service.
 
-1. The API name is `mirror`.
+1. The route name is `mirror`.
 2. The path is `/ws` (exact match).
 3. Accepted HTTP method is `GET`.
 4. Click on the **Enable WebSocket** checkbox.
 
-![Create WebSocket API](https://static.apiseven.com/2022/12/30/create-websocket-api.png)
+![Create WebSocket Route](https://static.apiseven.com/2022/12/30/create-websocket-api.png)
 
 The **Enable WebSocket** checkbox controls if your Apache APISIX should respect the WebSocket upgrade
-request. Once you click on it, API7 Cloud will add the label `WebSocket` for this API. This label marks
-the API type, and without actual impacts for this API, it's your liberty to decide to save or remove this label.
+request. Once you click on it, API7 Cloud will add the label `WebSocket` for this route. This label marks
+the route type, and without actual impacts for this route, it's your liberty to decide to save or remove this label.
 
 :::note
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started) guides first
 
 :::
 
-Test the WebSocket API
-----------------------
+Test the WebSocket Route
+------------------------
 
-Let's use the [wscat](https://github.com/websockets/wscat) utility to test whether the WebSocket API is working.
+Let's use the [wscat](https://github.com/websockets/wscat) utility to test whether the WebSocket route is working.
 
 ```shell
 wscat --connect ws://127.0.0.1:9080/v1/ws -H 'Host: websocket.local'

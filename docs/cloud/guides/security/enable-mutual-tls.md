@@ -45,26 +45,26 @@ Create SSL Object
 Follow the tips in [How to Create SSL Object](../../concepts/ssl.md#how-to-create-ssl-object) and upload the server certificate, private key, CA certificate, API7 Cloud
 creates an SSL object.
 
-Create Service and API
---------------------------
+Create Service and Route
+------------------------
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-* The Service name is `mtls-auth-app`.
+* The service name is `mtls-auth-app`.
 * The path prefix is `/v1`.
 * The protocol is `HTTPS`.
 * The HTTP Host is `mtls.httpbin.org`.
 * The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the mtls-auth-app Service.
+Besides, we'll create a route inside the mtls-auth-app Service.
 
-* The API name is `json`.
+* The route name is `json`.
 * The path is `/json` (exact match).
 * Accepted HTTP method is `GET`.
 
 :::tip
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started)
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started)
 guides first
 
 :::
@@ -72,7 +72,7 @@ guides first
 Test mTLS
 ---------
 
-Now let's try to access the JSON API without a client certificate.
+Now let's try to access the JSON route without a client certificate.
 
 ```shell
 curl https://mtls.httpbin.org:9443/v1/json --resolve 'mtls.httpbin.org:9443:127.0.0.1' --cacert ca.crt -i

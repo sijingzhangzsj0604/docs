@@ -1,66 +1,70 @@
 ---
-title: What is API
+title: What is Route
 reading_time: auto
 show_feedback: true
 ---
 
-In API7 Cloud, an API is a specific endpoint exposed by an [Service](./service.md).
+In API7 Cloud, a route is a specific endpoint exposed by a [service](./service.md).
 
-How to Create an API
+How to Create a Route
+---------------------
+
+Note route is an affiliated resource of the Service, to create a route,
+please create a [service](./service.md) first.
+
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the name of the target Service that you want to add a route for.
+4. On the Service details page, click on the **Create Route**
+5. Fill the form to create the target route. Two kinds of content that you should fill out:
+   * **Basic**, fields like name, path, and method should be filled out.
+   * [**Plugins**](./plugin.md), where you can specify a set of plugins.
+
+How to Get Route Details
+------------------------
+
+To get a route details, do the following:
+
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the name of the target Service (you need to know where the route is).
+4. On the Service details page, search for the route that you want in the routes table. Click on the route name.
+5. You'll be redirected to the route details page.
+
+How to Update a Route
+---------------------
+
+To update a route, follow the tips in [How to Get Route Details](#how-to-get-route-details) first.
+
+Route attributes are categorized into **Basics**, **Fine Grained Route Control**, **Plugins**, click on the
+edit icon to update the desired part.
+
+How to Delete a Route
 --------------------
 
-Note API is an affiliated resource of the Service, so before you go further,
-please create an [Service](./service.md) first.
-
-![HTTPBIN  Details](https://static.apiseven.com/2022/12/30/httpbin-app-detail.png)
-
-On the Service details page, scroll down to the API section and click on the **Create API** button, and you'll be redirected to a form to create an API.
-![Create HTTPBIN JSON API](https://static.apiseven.com/2022/12/30/create-httpbin-json-api.png)
-
-Two kinds of content that you should fill out:
-
-1. **Basic**, fields like name, path, and method should be filled out.
-2. [**Plugins**](./plugin.md), where you can specify a set of plugins.
-
-Get API Details
----------------
-
-On the Service details page, please scroll down to the API section,
-search for the API you want to see, and click on its name. API7 Cloud will redirect you to the API details page.
-
-![HTTPBIN JSON API DETAIL](https://static.apiseven.com/uploads/2023/01/12/1n3Kv5rc_Screenshot%202023-01-12%20at%2010.13.59.png)
-
-Update API
-----------
-
-You can update an API after you enter the API details page.
-
-API information is categorized into **Basics**, **Fine Grained Route Control**, **Plugins**, and each of them can be edited separately.
-
-![Update API in API Details Page](https://static.apiseven.com/uploads/2023/01/13/6nqAMEnp_json-api-with-edit-mark.png)
-
-Delete API
-----------
-
 :::danger
-IT'S DANGEROUS TO DELETE AN API, SO PLEASE MAKE SURE YOU NO LONGER USE THIS API.
+IT'S DANGEROUS TO DELETE A ROUTE, SO PLEASE MAKE SURE YOU NO LONGER USE IT.
 :::
 
-![Delete JSON API](https://static.apiseven.com/2022/12/30/delete-api.png)
+To delete a route, do the following:
 
-On the Service details page, scroll down to the API section,
-search for the API you want to delete, and click on the trash can icon. API7 Cloud will prompt you to confirm the deletion.
+1. Open the [API7 Cloud console](https://console.api7.cloud).
+2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
+3. Click on the name of the target Service (you need to know where the route is).
+4. On the Service details page, search for the route you want in the routes table. Then:
+   1. Click on the delete button.
+   2. Or you can enter the route details page by clicking the route name, then click on the **Actions** button, select **Delete** field.
 
-![Double Check of Delete JSON API](https://static.apiseven.com/2022/12/30/delete-api-double-check.png)
+You'll be asked to fill the route name as the double check before deleting the route.
 
 Key Fields
 ----------
 
-Some fields are vital for the API to work.
+Some fields are vital for the route to work.
 
 ### Path
 
-`Path` is the URI path of the API. It'll start with the [Path Prefix](./service.md#path-prefix).
+`Path` is the URI path of the route. It'll start with the [Path Prefix](./service.md#path-prefix).
 You can decide to if strip the `Path Prefix` (through the `Strip Service Path Prefix` option)
 before the request goes upstream. As an example, if the `Path Prefix` is `/api/v1`, the `Path` is
 `/products`, requests will have `/api/v1/products` as the URI path when they go to the upstream if the
@@ -73,8 +77,8 @@ and `Path` is `products`, the URI path will be `/api/v1/products` instead of `/a
 :::
 
 The match type for the `Path` can be exact or prefix. An exact match means the URI path of requests should be
-identical to the API `Path`. Prefix match means the URI path of requests should start with the
-`Path` of this API. As an example, if the `Path` is `/products`, and the match type is prefix, then `/products/c2fb7846`,
+identical to the route `Path`. Prefix match means the URI path of requests should start with the
+`Path` of this route. As an example, if the `Path` is `/products`, and the match type is prefix, then `/products/c2fb7846`,
 `/products123` will be matched. But if the match type is exact, then only `/products` can be matched.
 
 ### Method
@@ -83,12 +87,11 @@ identical to the API `Path`. Prefix match means the URI path of requests should 
 
 ### Fine Grained Route Control
 
-Sometimes it's not enough to match the API only uses path, HTTP methods. For example, for requests
+Sometimes it's not enough to match the route only uses path, HTTP methods. For example, for requests
 which takes the `X-API-Version` header and value is `v1`, let's apply the [Fault Injection](../guides/traffic-management/fault-injection.md).
-In such a case, the API fine-grained route control helps you.
+In such a case, the route fine-grained route control helps you.
 
-API7 Cloud allows you to configure some expressions in the API fine-grained route control.
-An expression is composed of subject, name, operator, value.
+The fine-grained route control feature is composed of a series of expressions. An expression contains subject, name, operator, value.
 
 * The subject is the scope of the expression subject, optional values are:
   * `Header`: subject will fetch from HTTP request headers.
@@ -119,7 +122,7 @@ Besides, API7 Cloud also supports configuring the logical relationship among all
 
 ![FINE GRAINED ROUTE CONTROL](https://static.apiseven.com/2022/12/30/fine-grained-route-control.png)
 
-The above fine grained route control configurations makes only requests with below characteristics can match the API:
+The above fine grained route control configurations makes only requests with below characteristics can match the route:
 
 1. Requests should have the `X-Debug` header.
 2. Requests should have the `version` arg in the query string, and its value should be `v1`.

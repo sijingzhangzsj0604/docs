@@ -39,13 +39,13 @@ In our case, the target Service has the following characteristics:
 1. The host is `cloud.httpbin.org`.
 2. The upstream target is `https://httpbin.org`.
 3. Path prefix is `/v1`.
-4. There is a JSON API (the endpoint is `/v1/json`).
+4. There is a JSON route (the endpoint is `/v1/json`).
 :::
 
 Send requests to verify
 -----------------------
 
-Since we only enable HTTPS protocol, if we try to access an API in this Service,
+Since we only enable HTTPS protocol, if we try to access a route in this service,
 we should get a `301 Moved Permanently` response asking us to use HTTPS protocol.
 
 ```shell

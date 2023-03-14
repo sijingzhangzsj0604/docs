@@ -4,13 +4,13 @@ reading_time: auto
 show_feedback: true
 ---
 
-You may want to protect your [APIs](../../../concepts/api.md)  or [Services](../../../concepts/service.md) by using API authentication.
+You may want to protect your [routes](../../../concepts/route.md)  or [services](../../../concepts/service.md) by using API authentication.
 With the authentication requirement, API7 Cloud will only forward API requests with valid authentication credentials. Other requests (without
 credentials or with a wrong one) will be rejected and get a `401 Unauthorized` response.
 
 JWT Auth is an API authentication method that requires API clients to provide a valid [JSON Web Token](https://jwt.io/) in a request header, cookie or query string.
 
-This guide will introduce using JWT Auth to protect your APIs when using API7 Cloud. You can also safeguard Services as long as you configure the Service's authentication plugin (instead of a specific API).
+This guide will introduce using JWT Auth to protect your APIs when using API7 Cloud. You can also safeguard services as long as you configure the Service's authentication plugin (instead of a specific route).
 
 :::important
 
@@ -27,33 +27,33 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Service and API
+### Create Service and Route
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-1. The Service name is `jwt-auth-app`.
+1. The service name is `jwt-auth-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `auth.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `jwt-auth-app` Service.
+Besides, we'll create a route inside the `jwt-auth-app` Service.
 
-1. The API name is `json`.
+1. The route name is `json`.
 2. The path is `/json` (exact match).
 3. Accepted HTTP method is `GET`.
 
 :::tip
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../../getting-started) guides first
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../../getting-started) guides first
 
 :::
 
-Configure Authentication Plugin on the API
-------------------------------------------
+Configure Authentication Plugin on the Route
+--------------------------------------------
 
-You need to enable the Authentication plugin on the `json` API as per the steps below:
+You need to enable the Authentication plugin on the `json` route as per the steps below:
 
-1. Enter the `json` API details page.
+1. Enter the `json` route details page.
 3. Click on **Add Plugin** and select the Authentication plugin.
 4. Choose JWT Auth as the authentication method and fill out the form.
 
@@ -71,7 +71,7 @@ The checkbox `Strip Credentials` controls if Apache APISIX should remove the aut
 the requests to the backend. By default, it will be reserved.
 :::
 
-Now let's try to access this API.
+Now let's try to access this route.
 
 ```shell
 curl http://127.0.0.1:9080/v1/json -H 'Host: auth.httpbin.org' -i

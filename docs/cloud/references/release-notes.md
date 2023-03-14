@@ -73,7 +73,7 @@ In this release, we changed the concept policy, rename it to plugin, which is cl
 
 ### API7 Cloud
 
-* Support API [fine-grained route control](../concepts/api.md#fine-grained-route-control)
+* Support API [fine-grained route control](../concepts/route.md#fine-grained-route-control)
 * Support transferring organization ownership
 * Support configuring custom limit key for Rate Limiting plugin
 * Support searching Applications via Hosts and Path Prefix

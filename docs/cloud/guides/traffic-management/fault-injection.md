@@ -8,7 +8,7 @@ Fault injection is a testing technique for detecting how your platform will beha
 some components don't run in the usual way.
 
 API7 Cloud allows users to configure the Fault Injection plugin to inject some errors for
-their [Service](../../concepts/service.md) or [APIs](../../concepts/api.md) so that
+their [services](../../concepts/service.md) or [routes](../../concepts/route.md) so that
 they can simulate the API Gateway faults.
 
 The Fault Injection plugin has two run modes: `Abort Request` and `Delay Request`. When it works in
@@ -16,25 +16,25 @@ The Fault Injection plugin has two run modes: `Abort Request` and `Delay Request
 will set the given status code and response body; when the run mode is `Delay Request`, Apache APISIX
 will delay the request for the given period and forward the request normally.
 
-Create Service and API
-----------------------
+Create Service and Route
+------------------------
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-* The Service name is `fault-injection-app`.
+* The service name is `fault-injection-app`.
 * The path prefix is `/v1`.
 * The HTTP Host is `fault-injection.httpbin.org`.
 * The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `fault-injection-app` Service.
+Besides, we'll create a route inside the `fault-injection-app` Service.
 
-* The API name is `json`.
+* The route name is `json`.
 * The path is `/json` (exact match).
 * Accepted HTTP method is `GET`.
 
 :::tip
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first.
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started) guides first.
 
 :::
 
@@ -49,8 +49,8 @@ select Fault Injection plugin, and fill out the form.
 
 :::tip
 
-You can also configure the Fault Injection plugin on the API level,
-in such a case, only the API will be affected by this plugin.
+You can also configure the Fault Injection plugin on the route level,
+in such a case, only the route will be affected by this plugin.
 
 :::
 

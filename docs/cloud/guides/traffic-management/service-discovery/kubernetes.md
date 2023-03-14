@@ -95,11 +95,11 @@ In this case:
 
 You can adjust the settings according to your real cases.
 
-### Create Service and API
+### Create Service and Route
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-1. The Service name is `sd-app`
+1. The service name is `sd-app`
 2. The path prefix is `/v1`
 3. The HTTP Host is `sd.httpbin.org`
 4. Select **service Discovery** when filling the upstream
@@ -111,9 +111,9 @@ We'll create a Service with the following details in this guide.
 
 ![K8s Service Discovery Upstream](https://static.apiseven.com/2022/12/30/k8s-sd-upstream.png)
 
-Besides, we'll create an API inside the `sd-app` Service.
+Besides, we'll create a route inside the `sd-app` Service.
 
-1. The API name is `anything`.
+1. The route name is `anything`.
 2. The path is `/anything` (prefix match), and strip the path prefix.
 3. It accepts all HTTP methods.
 

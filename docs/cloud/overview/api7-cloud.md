@@ -19,7 +19,7 @@ users' business, so it, in turn, ensures user privacy and security.
 
 API7 Cloud now helps you to deploy the necessary services on your demands so that you can:
 
-1. Configure [Service](../concepts/service.md) and [APIs](../concepts/api.md) for gateway;
+1. Configure [services](../concepts/service.md) and [routes](../concepts/route.md) for gateway;
 2. Get insight into the running status of your gateway instances;
 
 ![simple-api7-cloud](https://static.apiseven.com/2022/12/30/apiseven-cloud-arch.png)
@@ -39,7 +39,7 @@ What's Next
 * Learn key concepts
   * [What is Cluster](../concepts/cluster.md)
   * [What is Service](../concepts/service.md)
-  * [What is API](../concepts/api.md)
+  * [What is Route](../concepts/route.md)
   * [What is Consumer](../concepts/consumer.md)
   * [What is SSL](../concepts/ssl.md)
   * [What is Plugin](../concepts/plugin.md)

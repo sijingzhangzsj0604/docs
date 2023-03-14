@@ -12,8 +12,8 @@ and visualizes them.
 The control plane and data plane make up the gateway cluster. API7 Cloud provides the gateway cluster with managed
 control plane part and users themselves hosted data plane instances (i.e. [Apache APISIX](https://apisix.apache.org/)).
 
-These gateway instances will attach to the cluster and share the same configurations like [Service](./service.md), [API](./api.md),
-[Consumer](./consumer.md), and [SSL](./ssl.md). Gateway instances' metrics are also collected to the cluster
+These gateway instances will attach to the cluster and share the same configurations like [service](./service.md), [route](./route.md),
+[consumer](./consumer.md), and [SSL](./ssl.md). Gateway instances' metrics are also collected to the cluster
 so that you can see them on the API7 Cloud monitoring page directly.
 
 How to Create a Cluster

@@ -14,7 +14,7 @@ In API7 Cloud, an SSL object is a TLS bundle that contains:
 How API7 Cloud Uses SSL
 -----------------------
 
-In API7 Cloud, [Service](./service.md) use SSL objects, but the
+In API7 Cloud, [service](./service.md) use SSL objects, but the
 binding relationship is not explicit. It relies on the [TLS Server Name Indication](
 https://en.wikipedia.org/wiki/Server_Name_Indication) to choose the most matched SSL object.
 So if you want to use an SSL object for an Service, please make sure the Service host

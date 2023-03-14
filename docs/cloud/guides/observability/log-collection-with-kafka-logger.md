@@ -6,7 +6,7 @@ show_feedback: true
 
 Learning the running status of your API Gateway cluster is necessary in the real world. It's helpful to know if the cluster is healthy or not so that you can take action in time and avoid fatal faults. Logs
 are one of the most valuable ways to monitor the API Gateway. It also can analyze your API requests (calculate
-the top N APIs and status codes distribution).
+the top N routes and status codes distribution).
 
 API7 Cloud provides the Log Collection feature to configure "loggers" to collect log messages. With the help of
 Log Collection, you can transmit logs from [Apache APISIX](https://apisix.apache.org) to different log servers (
@@ -76,25 +76,25 @@ Refer to [Log Format in Log Collection](./log-collection-log-format.md) to learn
 
 :::
 
-### Create Service and API
+### Create Service and Route
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-* The Service name is `kafka-httpbin`.
+* The service name is `kafka-httpbin`.
 * The path prefix is `/v1`.
 * The protocol is `HTTP`.
 * The HTTP Host is `kafka.httpbin.org`.
 * The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `kafka-httpbin` Service.
+Besides, we'll create a route inside the `kafka-httpbin` Service.
 
-* The API name is `json`.
+* The route name is `json`.
 * The path is `/json` (exact match).
 * Accepted HTTP method is `GET`.
 
 :::tip
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started)
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started)
 guides first
 
 :::
@@ -105,7 +105,7 @@ Now let's add the Logging plugin to the `kafka-httpbin` Service.
 
 ![Add Logging Plugin](https://static.apiseven.com/2022/12/30/add-logging-plugin-2.png)
 
-The Logging plugin binds some existing Log Collection Plans to the Service or API.
+The Logging plugin binds some existing Log Collection Plans to the service or route.
 Here we bind the `kafka-logger`.
 
 ### Send Some Requests

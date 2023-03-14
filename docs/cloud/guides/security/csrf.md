@@ -30,24 +30,24 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Service and API
+### Create Service and Route
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-1. The Service name is `csrf-app`.
+1. The service name is `csrf-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `csrf.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `csrf-app` Service.
+Besides, we'll create a route inside the `csrf-app` Service.
 
-1. The API name is `anything`.
+1. The route name is `anything`.
 2. The path is `/anything` (prefix match), and strip the path prefix.
 3. It accepts all HTTP methods.
 
 :::note
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started) guides first
 
 :::
 
@@ -62,7 +62,7 @@ The token name is `apisix-csrf-token`, it will be the header and Cookie key to p
 Test CSRF Plugin
 ----------------
 
-Let's first send a request to the `anything` API without the CSRF token.
+Let's first send a request to the `anything` route without the CSRF token.
 
 ```shell
 curl http://127.0.0.1:9080/v1/anything -H 'Host: csrf.httpbin.org' -i

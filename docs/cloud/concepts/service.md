@@ -4,9 +4,9 @@ reading_time: auto
 show_feedback: true
 ---
 
-In API7 Cloud, the Service is a high-level abstraction for a backend (or upstream) from
+In API7 Cloud, the service is a high-level abstraction for a backend (or upstream) from
 API Gateway's point of view. In terms of architecture, it's equivalent to a micro-service,
-which contains a set of [APIs](./api.md) (all of them will be effective on the API Gateway).
+which contains a set of [routes](./route.md) (all of them will be effective on the API Gateway).
 
 How to create a Service
 -----------------------
@@ -37,7 +37,7 @@ To get the Service details, do the following:
 3. Click on the name of the Service that you want to browse. You can see the following attributes of the Service:
    * Basic information (e.g., [Protocol](#protocol), [Host](#host))
    * [Upstream](#upstream) information
-   * API list
+   * Route list
    * [Plugins](./plugin.md) on this Service
    * Canary Release rules
 
@@ -48,7 +48,7 @@ Delete a Service
 **IT'S DANGEROUS TO DELETE A SERVICE UNLESS YOU KNOW IT'S NO LONGER USED.**
 :::
 
-Delete all the APIs in the Service before you try to delete the Service, or the delete operation will fail.
+Delete all the routes in the service before you try to delete the Service, or the delete operation will fail.
 
 To delete a Service, do the following:
 
@@ -63,16 +63,16 @@ Or you can:
 2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
 3. Click on the name of the Service that you want to browse.
 4. Click on the **Actions** button, select the **Delete** from the manu.
-4. You'll be asked to fill the Service name to do the delete double check.
+5. You'll be asked to fill the Service name to do the delete double check.
 
 Key Fields
 ----------
 
-Some fields are vital for the API to work.
+Some fields are vital for the service to work.
 
 ### Protocol
 
-Which protocol the Service will use. Currently, candidates are `HTTP`, `HTTPS`, and `HTTP, HTTPS`.
+Which protocol the service will use. Currently, candidates are `HTTP`, `HTTPS`, and `HTTP, HTTPS`.
 
 * `HTTP`. The Service only handles HTTP traffic.
 * `HTTPS`. The Service only handles HTTPS traffic. In such a case, gateway instances will redirect requests sent to the HTTP port to the HTTPS port.
@@ -80,8 +80,8 @@ Which protocol the Service will use. Currently, candidates are `HTTP`, `HTTPS`, 
 
 ### Path Prefix
 
-`Path Prefix` is the path prefix of the Service. It'll be used with the [API Path](./api.md#path)
-together to form the full API path.
+`Path Prefix` is the path prefix of the Service. It'll be used with the [Route Path](./route.md#path)
+together to form the full route path.
 
 ### Host
 
@@ -177,6 +177,6 @@ You can see the [Upstream Health Check Reference](../references/product/upstream
 What's Next
 -----------
 
-* Learn about [API](./api.md)
+* Learn about [Route](./route.md)
 * Learn about [Plugin](./plugin.md)
 * Learn about [SSL](./ssl.md)

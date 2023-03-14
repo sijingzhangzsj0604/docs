@@ -6,8 +6,8 @@ show_feedback: true
 
 API7 Cloud uses [Apache APISIX](https://apisix.apache.org) as its data plane gateway.
 Users can use all the original Apache APISIX plugins on API7 Cloud, users can configure
-these plugins on [Service](../../concepts/service.md), [API](../../concepts/api.md),
-[Consumer](../../concepts/consumer.md) and [Cluster](../../concepts/cluster.md).
+these plugins on [service](../../concepts/service.md), [route](../../concepts/route.md),
+[consumer](../../concepts/consumer.md) and [cluster](../../concepts/cluster.md).
 
 :::tip
 Currently, API7 Cloud supports all plugins in Apache APISIX `2.15`.

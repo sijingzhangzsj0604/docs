@@ -127,15 +127,15 @@ When you create the Service or when you add a new Upstream version:
 ![How to Enable Upstream mTLS](https://static.apiseven.com/2022/12/30/how-to-enable-upstream-mtls.png)
 :::
 
-Besides, we'll create an API inside the mtls-auth-app Service.
+Besides, we'll create a route inside the mtls-auth-app Service.
 
-* The API name is `anything`.
+* The route name is `anything`.
 * The path is `/anything` (exact match).
 * Accepted HTTP method is `GET`.
 
 :::tip
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started)
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started)
 guides first
 
 :::
@@ -143,7 +143,7 @@ guides first
 Test mTLS
 ---------
 
-Let's send a request to the `anything` API via curl.
+Let's send a request to the `anything` route via curl.
 
 ```shell
 curl http://127.0.0.1:9080/v1/anything  -H 'Host: umtls.httpbin.org' -i

@@ -19,7 +19,7 @@
         "getting-started/setup-account-login",
         "getting-started/add-gateway-instance",
         "getting-started/create-httpbin-service",
-        "getting-started/create-httpbin-api",
+        "getting-started/create-httpbin-route",
         "getting-started/send-requests-to-verify",
         "getting-started/attach-limit-count-plugin",
         "getting-started/summary"
@@ -111,7 +111,7 @@
       "items": [
         "concepts/cluster",
         "concepts/service",
-        "concepts/api",
+        "concepts/route",
         "concepts/consumer",
         "concepts/ssl",
         "concepts/plugin"

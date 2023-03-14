@@ -127,13 +127,10 @@ curl http://127.0.0.1:9080/v1/test-canary -H 'Host: canary.nginx.test' -s
 
 :::
 
-### Create an API
+### Create a Route
 
-Now let's create an [API](../../concepts/api.md) in this Service.
-
-![Create Test Canary API](https://static.apiseven.com/2022/12/30/create-test-canary-api.png)
-
-This API will accept requests in which URI path is `/v1/test-canary,` and the HTTP method is `GET`.
+Let's create a route via the steps in [How to Create a Route](../../concepts/route.md#how-to-create-a-route).
+This route will accept requests in which URI path is `/v1/test-canary,` and the HTTP method is `GET`.
 
 API7 Cloud Canary Release Workflow
 ----------------------------------

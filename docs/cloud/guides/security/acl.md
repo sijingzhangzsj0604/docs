@@ -7,7 +7,7 @@ show_feedback: true
 API7 Cloud utilizes the [Consumer](../../concepts/consumer.md) functionality to provide fine-grained API authentication.
 An API request with valid credentials can be forwarded by the [Apache APISIX](https://apisix.apache.org) normally, no matter which
 [Service](../../concepts/service.md) it accesses. This permissive access control might not be enough when users want to
-control which Consumers can access which Service or [APIs](../../concepts/api.md). So that requests from unauthorized Consumers
+control which Consumers can access which services or [routes](../../concepts/route.md). So that requests from unauthorized Consumers
 will be rejected by Apache APISIX, and the API security can be enhanced.
 
 [ACL](https://en.wikipedia.org/wiki/Access-control_list) is a way to control the accessible clients of API.
@@ -26,11 +26,11 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Service and API
+### Create Service and Route
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-1. The Service name is `acl-app`.
+1. The service name is `acl-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `acl.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
@@ -45,15 +45,15 @@ The ACL plugin won't work if you don't configure the Authentication plugin.
 
 :::
 
-Besides, we'll create an API inside the `acl-app` Service.
+Besides, we'll create a route inside the `acl-app` Service.
 
-1. The API name is `json`.
+1. The route name is `json`.
 2. The path is `/json` (exact match).
 3. Accepted HTTP method is `GET`.
 
 :::tip
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started) guides first
 
 :::
 

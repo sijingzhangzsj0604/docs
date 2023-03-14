@@ -11,9 +11,9 @@ account name and password. It helps integrate API7 Cloud with your programs.
 You may want to integrate API7 Cloud API with your existing Service in several
 cases like:
 
-1. Integrate API7 Cloud with your CI/CD pipeline (to expose an API to API Gateway after it's released).
-2. Change the [API](../../concepts/api.md) configuration after some events triggered
-3. Create a new [Consumer](../../concepts/consumer.md) automatically for your users if they're allowed to
+1. Integrate API7 Cloud with your CI/CD pipeline (to expose a route to API Gateway after it's released).
+2. Change the [route](../../concepts/route.md) configuration after some events triggered
+3. Create a new [consumer](../../concepts/consumer.md) automatically for your users if they're allowed to
    access some of your services.
 
 :::info

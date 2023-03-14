@@ -4,9 +4,11 @@ reading_time: auto
 show_feedback: true
 ---
 
-So far, you know how to configure Service and API to let your APISIX instance run as your expectation. This section will extend the API with the [Limit Count Plugin](../guides/traffic-management/limit-count.md). Limit Count protects your API from too many requests from being overwhelmed by a large number of requests.
+So far, you know how to configure [service](../concepts/service.md) and [route](../concepts/route.md) to
+let your APISIX instance run as your expectation. This section will extend the route with the [Limit Count Plugin](../guides/traffic-management/limit-count.md).
+Limit Count protects your route from being overwhelmed by a large number of requests.
 
-To add the Limit Count plugin for HTTPBIN Service. Do the following:
+To add the Limit Count plugin for HTTPBIN service. Do the following:
 
 1. Open the [API7 Cloud console](https://console.api7.cloud).
 2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
@@ -20,7 +22,7 @@ To add the Limit Count plugin for HTTPBIN Service. Do the following:
 
 In this case, we configure:
 
-1. A gateway instance only accepts five requests in a minute (for the JSON API);
+1. A gateway instance only accepts five requests in a minute (for the JSON route);
 2. If the number of requests exceeds the limit, the gateway instance rejects the requests with the `429` status code, and the response body will be "Too many requests".
 
 Now let's try to verify the Limit Count Plugin.
@@ -62,7 +64,7 @@ Apache APISIX wraps the error message in a JSON string.
 The throttling quota might already reset when you run the above command. Try a few times if you don't see this output.
 :::
 
-Congratulations, you've mastered using Limit Count plugin in your API.
+Congratulations, you've mastered using Limit Count plugin in your route.
 
 Next
 ----

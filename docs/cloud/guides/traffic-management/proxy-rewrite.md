@@ -17,24 +17,24 @@ Prepare the Environment
 Please refer to [How to Deploy Apache APISIX](../product/how-to-deploy-apache-apisix.md) to learn how to deploy
 Apache APISIX and connect it to API7 Cloud. In this guide, we'll deploy an Apache APISIX instance on Docker.
 
-### Create Service and API
+### Create Service and Route
 
-We'll create a Service with the following details in this guide.
+We'll create a service with the following details in this guide.
 
-1. The Service name is `transform-app`.
+1. The service name is `transform-app`.
 2. The path prefix is `/v1`.
 3. The HTTP Host is `rewrite.httpbin.org`.
 4. The upstream URL is `https://httpbin.org`.
 
-Besides, we'll create an API inside the `transform-app` Service.
+Besides, we'll create a route inside the `transform-app` Service.
 
-1. The API name is `anything`.
+1. The route name is `anything`.
 2. The path is `/anything` (prefix match), and strip the path prefix.
 3. It accepts all HTTP methods.
 
 :::note
 
-If you don't know how to configure a Service and API, please refer to the [Getting Started](../../getting-started) guides first
+If you don't know how to configure a service and route, please refer to the [Getting Started](../../getting-started) guides first
 
 :::
 
@@ -55,7 +55,7 @@ You can also combine the above transforming cases according to your actual situa
 
 ### Rewrite HTTP Method
 
-Let's create the Proxy Rewrite plugin (on the `anything` API) in which we rewrite the HTTP method to `GET`.
+Let's create the Proxy Rewrite plugin (on the `anything` route) in which we rewrite the HTTP method to `GET`.
 
 ![Proxy Rewrite Plugin Rewrite HTTP Method](https://static.apiseven.com/2023/01/03/63b3dec90bcd0.png)
 
@@ -91,7 +91,7 @@ The original HTTP method is `POST,` and it's rewritten to `GET` (the `method` fi
 
 #### Replace URI
 
-Assume that we want to access the `/json` API when we access `/v1/anything`. In such a case, let's update the
+Assume that we want to access the `/json` route when we access `/v1/anything`. In such a case, let's update the
 Proxy Rewrite plugin just like below:
 
 ![Proxy Rewrite Plugin Replace URI](https://static.apiseven.com/2023/01/03/63b3dec83bf7e.png)
@@ -126,7 +126,7 @@ curl http://127.0.0.1:9080/v1/anything -H 'Host: rewrite.httpbin.org'
 }
 ```
 
-As you can see, we got the JSON response, which means Apache APISIX accessed the `/json` API.
+As you can see, we got the JSON response, which means Apache APISIX accessed the `/json` route.
 
 #### Regex Replace URI
 

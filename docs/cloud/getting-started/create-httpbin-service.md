@@ -9,7 +9,7 @@ Now it's time to learn how to create a Service. Typically, you can map a physica
 1. Open the [API7 Cloud console](https://console.api7.cloud).
 2. From the left navigation bar, choose **API Management**, then select **Services** from the secondary manu.
 3. Click on the **Create Service** button.
-5. Fill the form, in this case:
+4. Fill the form, in this case:
    * We set the "Path Prefix" to `/v1`, which means the URI path of all the requests to this Service should start with `/v1`.
    * We set the HTTP Host to `cloud.httpbin.org`, which means all the requests to this Service should carry the Host header with the value of `cloud.httpbin.org`.
    * We set the "Upstream URL" to "https://httpbin.org", which means all the requests to this Service will be proxied to "httpbin.org".
@@ -19,4 +19,4 @@ Good job! Now that you have created the HTTPBIN Service, let's go to the next se
 Next
 ----
 
-[Create HTTPBIN API](./create-httpbin-api.md).
+[Create HTTPBIN API](./create-httpbin-route.md).

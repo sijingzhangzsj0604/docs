@@ -13,10 +13,10 @@ Query Filter
 ------------
 
 By default, API7 Cloud shows metrics for all gateway instances
-among all [Services](../../concepts/service.md) and their [APIs](../../concepts/api.md),
-which is a global view. Use the query filter if you want to see the metrics for a specific instance or a Service (even an API).
+among all [services](../../concepts/service.md) and their [routes](../../concepts/route.md),
+which is a global view. Use the query filter if you want to see the metrics for a specific instance or a service (even a route).
 
-You can use the instance and Service/API filters simultaneously to see the monitoring data for the specific Service/API in an instance.
+You can use the instance and service/route filters simultaneously to see the monitoring data for the specific service/route in an instance.
 
 Query Time Range
 ----------------
